@@ -1,0 +1,111 @@
+﻿@{
+	Layout = "/Views/Shared/Layouts/_StudentLayout.cshtml";
+	ViewData["Title"] = "Liên hệ";
+}
+@await Html.PartialAsync("_Variables")
+
+<link href="~/css/responsive.css" rel="stylesheet" />
+<link href="~/css/main_styles.css" rel="stylesheet" />
+
+<link rel="stylesheet" type="text/css" href="~/css/bootstrap4/bootstrap.min.css">
+<link href="~/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="~/css/contact.css">
+<link rel="stylesheet" type="text/css" href="~/css/contact_responsive.css">
+
+
+<link href="~/plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="~/css/courses.css">
+<link rel="stylesheet" type="text/css" href="~/css/courses_responsive.css">
+
+
+<!-- Contact -->
+<div class="contact">
+
+	<!-- Contact Map -->
+	<!-- Google Map -->
+	@* <div class="contact_map">
+		<div class="map">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3724.506341944542!2d105.52270891171997!3d21.012416680552015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135abc60e7d3f19%3A0x2be9d7d0b5abcbf4!2sFPT%20University!5e0!3m2!1sen!2s!4v1721305426925!5m2!1sen!2s"
+					width="100%"
+					height="600"
+					style="border:0;"
+					allowfullscreen=""
+					loading="lazy"
+					referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</div>
+	</div> *@
+
+	<!-- Contact Info -->
+
+	<div class="contact_info_container">
+		<div class="container">
+			<div class="row">
+
+				<!-- Contact Form -->
+				<div class="col-lg-6">
+					<div class="contact_form">
+						<div class="contact_info_title">Điền thông tin liên hệ tại đây</div>
+						<form action="#" method="post" enctype="text/plain" class="comment_form" id="consultationRequestForm">
+							<div>
+								<div class="form_title">Họ & tên:</div>
+								<input type="text" class="comment_input" name="name" required="required" id="contactName">
+							</div>
+							<div>
+								<div class="form_title">Số điện thoại</div>
+								<input type="text" class="comment_input" name="phoneNumber" required="required" id="phoneNumber">
+							</div>
+							<div>
+								<div class="form_title">Email (optional):</div>
+								<input type="email" class="comment_input" name="email" id="email">
+							</div>
+							<div>
+								<div class="form_title">Lời nhắn (optional):</div>
+								<textarea rows="1" class="comment_input comment_textarea" name="message" id="message"></textarea>
+							</div>
+							<div class="row mx-0 justify-content-between w-100" id="wishlists">
+								<h5 class="pb-3 px-0 col-12" id="">Chọn khóa học mà bạn quan tâm.</h5>
+							</div>
+							<div>
+								<button type="submit" class="comment_button trans_200">Gửi thông tin</button>
+							</div>
+						</form>
+					</div>
+				</div>
+
+				<!-- Contact Info -->
+				<div class="col-lg-6">
+					<div class="contact_info">
+						<div class="contact_info_title">Contact Info</div>
+						<div class="contact_info_text">
+							<p>
+								Chào mừng bạn đến với trang thông tin liên hệ của chúng tôi! Chúng tôi luôn sẵn sàng để giải đáp mọi thắc mắc của bạn và hỗ trợ trong quá trình học tập.
+							</p>
+						</div>
+						<div class="contact_info_location">
+							<div class="contact_info_location_title">@TempData.Peek("appName")</div>
+							<ul class="location_list">
+								<li>
+									@TempData.Peek("address")
+								</li>
+								<li>
+									 @TempData.Peek("hotline")
+								</li>
+								<li>
+									@TempData.Peek("supporterEmail")
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+@* <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCIwF204lFZg1y4kPSIhKaHEXMLYxxuMhA"></script> *@
+@* <script src="~/js/contact.js"></script> *@
+<script src="~/fetchdata/home-contact.js"></script>

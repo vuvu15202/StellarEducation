@@ -1,0 +1,117 @@
+﻿@await Html.PartialAsync("_Variables")
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="apple-touch-icon" sizes="76x76" href="~/assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="@TempData.Peek("FaviconLogo")">
+    <title>
+        @ViewData["Title"]
+    </title>
+    <!--     Fonts and icons     -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
+    <!-- Nucleo Icons -->
+    <link href="~/assets/css/nucleo-icons.css" rel="stylesheet" />
+    <link href="~/assets/css/nucleo-svg.css" rel="stylesheet" />
+    <!-- Font Awesome Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link href="~/assets/css/nucleo-svg.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <!-- CSS Files -->
+    <link id="pagestyle" href="~/assets/css/argon-dashboard.css?v=2.0.4" rel="stylesheet" />
+</head>
+
+<body class="g-sidenav-show bg-gray-100" style="width:100%;">
+    <div class="min-height-300 bg-primary position-absolute w-100"></div>
+    <div id="loading" class="loading-overlay d-none">
+        <div class="spinner-border text-primary" role="status">
+        </div>
+        <div class="text-primary mt-2">Loading...</div>
+    </div>
+    @await Html.PartialAsync("Partials/AsideBar - Copy")
+    <main class="main-content position-relative border-radius-lg ">
+        <!--Navbar here-->
+        @await Html.PartialAsync("Partials/Navbar - Copy")
+        <!-- Main page here -->
+        <div class="container-fluid py-4">
+            @RenderBody()
+            <!-- footer here -->
+            @await Html.PartialAsync("Partials/Footer - Copy")
+        </div>
+    </main>
+    @await Html.PartialAsync("Partials/SettingButton - Copy")
+    @await Html.PartialAsync("_Variables") @* @await Html.PartialAsync("Sections/_Variables") *@
+
+    <!--   Core JS Files   -->
+    <script src="~/assets/js/core/popper.min.js"></script>
+    <script src="~/assets/js/core/bootstrap.min.js"></script>
+    <script src="~/assets/js/plugins/perfect-scrollbar.min.js"></script>
+    <script src="~/assets/js/plugins/smooth-scrollbar.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+
+    @* dashboard *@
+    <a href="~/assets/js/argon-dashboard.js.map"></a>
+    @* <script src="~/assets/js/argon-dashboard.min.js"></script> *@
+    <script src="~/assets/js/argon-dashboard.js"></script>
+    @* dashboard *@
+    <script src="~/assets/js/darkmode.js"></script>
+    <script>
+        var win = navigator.platform.indexOf('Win') > -1;
+        if (win && document.querySelector('#sidenav-scrollbar')) {
+            var options = {
+                damping: '0.5'
+            }
+            Scrollbar.init(document.querySelector('#sidenav-scrollbar'), options);
+        }
+        function getCookie(name) {
+            // Split cookies by semicolon
+            var cookies = document.cookie.split(';');
+
+            // Loop through each cookie
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i];
+                // Trim leading and trailing spaces
+                cookie = cookie.trim();
+                // Check if this cookie is the one we're looking for
+                if (cookie.startsWith(name + '=')) {
+                    // Return the cookie value
+                    return cookie.substring(name.length + 1);
+                }
+            }
+            // Return null if cookie not found
+            return null;
+        }
+
+        $(document).ready(function () {
+            // Lấy đường dẫn hiện tại
+            var currentPath = window.location.pathname
+            console.log(currentPath)
+
+            // Lặp qua các phần tử nav và kiểm tra đường dẫn
+            $('.nav-link').each(function () {
+                var linkPath = $(this).attr('href');
+
+                // Kiểm tra xem đường dẫn có phù hợp không
+                if (currentPath === linkPath) {
+                    // Nếu đúng, thêm lớp active
+                    $(this).addClass('active');
+                } else {
+                    // Nếu không, loại bỏ lớp active (nếu có)
+                    $(this).removeClass('active');
+                }
+            });
+        });
+    </script>
+    <!-- Github buttons -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+    <!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
+    @* <script src="../assets/js/argon-dashboard.min.js?v=2.0.4"></script> *@
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+
+</html>

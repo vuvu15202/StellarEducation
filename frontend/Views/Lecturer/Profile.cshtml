@@ -1,0 +1,70 @@
+﻿@model ASPNET_MVC.Models.Entity.User
+
+@{
+    ViewData["Title"] = "Profile Lecturer";
+    Layout = "/Views/Shared/Layouts/_StudentLayout.cshtml";
+
+}
+<!-- Resource CSS -->
+<link href="~/css/blog_single.css" rel="stylesheet" />
+<link href="~/css/blog_single_responsive.css" rel="stylesheet" />
+
+<div class="container mt-5">
+    <!-- Profile Header -->
+    <div class="profile-header">
+        <img class="square-image" src="https://via.placeholder.com/150" alt="Instructor Photo">
+        <h1>John Doe</h1>
+        <p>Senior Web Developer</p>
+        <p>10+ years of experience in web development, specialized in HTML, CSS, JavaScript, and more.</p>
+    </div>
+
+    <!-- Profile Body -->
+    <div class="profile-body">
+        <div class="row">
+            <div class="col-md-8">
+                <!-- About the Instructor -->
+                <h2>About the Instructor</h2>
+                <p>
+                    John Doe is a passionate web developer with over a decade of experience building complex websites
+                    and web applications. He is an expert in frontend technologies like HTML, CSS, and JavaScript,
+                    as well as backend frameworks like Node.js. John has worked on numerous high-profile projects
+                    and is known for his excellent teaching style, making even the most difficult topics easy to
+                    understand.
+                </p>
+
+                <!-- Contact Information -->
+                <h3>Contact Information</h3>
+                <ul>
+                    <li>Email: john.doe@example.com</li>
+                    <li>LinkedIn: <a href="#">linkedin.com/in/johndoe</a></li>
+                    <li>Website: <a href="#">www.johndoe.dev</a></li>
+                </ul>
+            </div>
+
+            <!-- Instructor's Courses -->
+            <div class="col-md-4">
+                <h2>Courses by John Doe</h2>
+                <div class="course-list">
+                    <div class="course-item">
+                        <h5>Introduction to Web Development</h5>
+                        <p>Learn the basics of web development from scratch.</p>
+                    </div>
+                    <div class="course-item">
+                        <h5>Advanced JavaScript Techniques</h5>
+                        <p>Deep dive into JavaScript concepts and frameworks.</p>
+                    </div>
+                    <div class="course-item">
+                        <h5>Responsive Web Design</h5>
+                        <p>Master the art of creating responsive and mobile-friendly websites.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back to Courses Button -->
+    <div class="text-center mt-4" style="margin-bottom: 20px;">
+        <a href="Course_Detail.html" class="btn btn-back">Back to Course Detail</a>
+    </div>
+</div>
+

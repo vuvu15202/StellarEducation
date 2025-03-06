@@ -1,0 +1,50 @@
+﻿
+@{
+    Layout = "/Views/Shared/Layouts/_AdminLayout.cshtml";
+    ViewData["Title"] = "Yêu cầu tư vấn";
+}
+
+<div class="row">
+    <div class="col-lg-12" style="height: 650px;">
+        <div class="card h-100">
+            <div class="card-header pb-0 p-3">
+                <div class="row">
+                    <div class="col-6 d-flex align-items-center">
+                        <h6 class="mb-0">Yêu Cầu Tư Vấn</h6>
+                    </div>
+                    <div class="col-6 text-end">
+                        <!-- <button class="btn btn-outline-primary btn-sm mb-0">View All</button> -->
+                        @* <input name="searchQuestionBank" id="searchQuestionBank" class="form-control" placeholder="Input ExamCode Here"> *@
+                    </div>
+                </div>
+            </div>
+            <div class="card-body p-3 pb-0" style="overflow-y: scroll; height: 30vh">
+                <table class="table table-striped align-items-center mb-0">
+                    <thead>
+                        <tr>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Created At</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Contact Name</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Phone Number</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Message</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">IsResolved</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Resolved By</th>
+                        </tr>
+                    </thead>
+                    <tbody id="consultationrequests">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    
+
+
+</div>
+
+
+
+@section Scripts {
+    <script src="~/fetchdata/admin-consultation-request.js"></script>
+}

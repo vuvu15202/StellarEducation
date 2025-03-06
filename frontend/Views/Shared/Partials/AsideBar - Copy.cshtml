@@ -1,0 +1,183 @@
+﻿@using ASPNET_MVC.Models.Entity;
+@{
+    // var user = ViewBag.User as ASPNET_MVC.Models.Entity.User;
+    var user = (Context.Items["UserLoggedIn"] as UserLoggedIn);
+}
+<aside class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 " id="sidenav-main">
+    <div class="sidenav-header">
+        <i class="fas fa-times p-3 cursor-pointer text-secondary opacity-5 position-absolute end-0 top-0 d-none d-xl-none" aria-hidden="true" id="iconSidenav"></i>
+        <a class="navbar-brand m-0" href="@TempData.Peek("frontendUrl")" target="_blank">
+            <img src="@TempData.Peek("TaskbarLogo")" class="navbar-brand-img h-100" alt="main_logo">
+            <span class="ms-1 font-weight-bold">@TempData.Peek("appName")</span>
+        </a>
+        @* <a class="navbar-brand m-0" href="@Url.Action("Dashboard", "Admin")">
+            <div class="logo_text">Just<span>Giving</span></div>
+            </a> *@
+    </div>
+    <hr class="horizontal dark mt-0">
+    <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main" style="height: 70vh;">
+        <ul class="navbar-nav">
+            @if (user.Roles.Contains(2))
+            {
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Dashboard", "Admin")">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="ni ni-tv-2 text-primary text-sm opacity-10"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Dashboard</span>
+                    </a>
+                </li>
+                @* <li class="nav-item">
+                    <a class="nav-link " href="@Url.Action("Studentfee", "Admin")">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-receipt fa-lg text-info text-sm opacity-10" style="color: #9875ff;"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Biên lai</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="@Url.Action("Notification", "Admin")">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-bell fa-lg text-sm" style="color: #00ccff;"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Quản lý thông báo</span>
+                    </a>
+                </li> *@
+                <li class="nav-item">
+                    <a class="nav-link " href="@Url.Action("consultationrequests", "Admin")">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fab fa-rocketchat fa-lg text-sm" style="color: #ff0000;"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Yêu cầu tư vấn</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="@Url.Action("usermanagement", "Admin")">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-users fa-lg text-sm text-success" style="color: #f566ff;"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Quản lý User</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="@Url.Action("Categories", "Admin")">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-list fa-lg text-sm" style="color: #9d00d6; width:60px;"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Quản lý Danh Mục</span>
+                    </a>
+                </li>
+            }
+            else if (user.Roles.Contains(5))
+            {
+                @* <li class="nav-item">
+                    <a class="nav-link " href="@Url.Action("Studentfee", "Admin")">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-receipt fa-lg text-info text-sm opacity-10" style="color: #9875ff;"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Biên lai</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="@Url.Action("Notification", "Admin")">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-bell fa-lg text-sm" style="color: #00ccff;"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Quản lý thông báo</span>
+                    </a>
+                </li> *@
+                <li class="nav-item">
+                    <a class="nav-link " href="@Url.Action("consultationrequests", "Admin")">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fab fa-rocketchat fa-lg text-sm" style="color: #ff0000;"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Yêu cầu tư vấn</span>
+                    </a>
+                </li>
+            }
+            else if (user.Roles.Contains(3))
+            {
+                <li class="nav-item">
+                    <a class="nav-link " href="@Url.Action("Courses", "Admin")">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-graduation-cap fa-lg text-sm" style="color: #2bc700;"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Quản lý Khóa học</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="@Url.Action("Lessons", "Admin")">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-chalkboard-teacher fa-lg text-sm" style="color: #ee00ff; width:60px;"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Quản lý bài giảng</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="@Url.Action("QuestionBanks", "Admin")">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-sticky-note fa-lg text-sm" style="color: #29bfff; width:60px;"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Quản lý đề thi</span>
+                    </a>
+                </li>
+            }
+            else
+            {
+                <li class="nav-item">
+                    <a class="nav-link " href="@Url.Action("Enroll", "Student")">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-graduation-cap fa-lg text-sm" style="color: #2bc700;"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Khóa học của tôi</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link " href="@Url.Action("Examination", "Student")">
+                        <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                            <i class="fas fa-edit fa-lg text-sm" style="color: #7d00b8;"></i>
+                        </div>
+                        <span class="nav-link-text ms-1">Bài thi của tôi</span>
+                    </a>
+                </li>
+            }
+           
+            @* <li class="nav-item">
+                <a class="nav-link" href="@Url.Action("ListProjectAdmin", "Admin")">
+                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="ni ni-calendar-grid-58 text-warning text-sm opacity-10"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Quản lý dự án</span>
+                </a>
+            </li> *@
+            
+            
+
+            <li class="nav-item mt-3">
+                <h6 class="ps-4 ms-2 text-uppercase text-xs font-weight-bolder opacity-6">Account pages</h6>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="@Url.Action("userprofile", "Account")">
+                    <div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+                        <i class="fas fa-user fa-lg text-sm" style="color: #4287ff; width:60px;"></i>
+                    </div>
+                    <span class="nav-link-text ms-1">Profile của tôi</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    @* <div class="sidenav-footer mx-3 ">
+        <div class="card card-plain shadow-none" id="sidenavCard">
+            <img class="w-50 mx-auto" src="~/assets/img/illustrations/icon-documentation.svg" alt="sidebar_illustration">
+            <div class="card-body text-center p-3 w-100 pt-0">
+                <div class="docs-info">
+                    <h6 class="mb-0">Need help?</h6>
+                    <p class="text-xs font-weight-bold mb-0">Please check our docs</p>
+                </div>
+            </div>
+        </div>
+        <a href="https://www.creative-tim.com/learning-lab/bootstrap/license/argon-dashboard" target="_blank" class="btn btn-dark btn-sm w-100 mb-3">Documentation</a>
+        <a class="btn btn-primary btn-sm mb-0 w-100" href="https://www.creative-tim.com/product/argon-dashboard-pro?ref=sidebarfree" type="button">Upgrade to pro</a>
+    </div> *@
+</aside>

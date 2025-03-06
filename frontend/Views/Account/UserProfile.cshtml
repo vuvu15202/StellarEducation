@@ -1,0 +1,289 @@
+﻿
+@{
+    Layout = "/Views/Shared/Layouts/_AdminLayout.cshtml";
+    ViewData["Title"] = "Profile của tôi";
+}
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<div class="card shadow-lg mx-4 card-profile-bottomm">
+    <div class="card-body p-3">
+        <div class="row gx-4">
+            <div class="col-auto">
+                <div class="avatar avatar-xl position-relative">
+                    <img src="../assets/img/unknown.png" id="userImage" style="height: 74px; object-fit: cover;" alt="profile_image" class="w-100 border-radius-lg shadow-sm">
+                </div>
+            </div>
+            <div class="col-auto my-auto">
+                <div class="h-100">
+                    <h5 class="mb-1" id="userNameHeader">
+                        User Name
+                    </h5>
+                    <p class="mb-0 font-weight-bold text-sm" id="roleNameHeader">
+                        Role: User
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 my-sm-auto ms-sm-auto me-sm-0 mx-auto mt-3">
+                <div class="nav-wrapper position-relative end-0">
+                    @* <ul class="nav nav-pills nav-fill p-1" role="tablist">
+                    <li class="nav-item" role="presentation">
+                    <a class="nav-link mb-0 px-0 py-1 d-flex align-items-center justify-content-center" data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="false" tabindex="-1">
+                    <i class="ni ni-app"></i>
+                    <span class="ms-2">App</span>
+                    </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                    <a class="nav-link mb-0 px-0 py-1 d-flex align-items-center justify-content-center" data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="false" tabindex="-1">
+                    <i class="ni ni-email-83"></i>
+                    <span class="ms-2">Messages</span>
+                    </a>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                    <a class="nav-link mb-0 px-0 py-1 d-flex align-items-center justify-content-center active" data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="true">
+                    <i class="ni ni-settings-gear-65"></i>
+                    <span class="ms-2">Settings</span>
+                    </a>
+                    </li>
+                    <div class="moving-tab position-absolute nav-link" style="padding: 0px; transition: 0.5s; transform: translate3d(187px, 0px, 0px); width: 100px;"><a class="nav-link mb-0 px-0 py-1 d-flex align-items-center justify-content-center active" data-bs-toggle="tab" href="javascript:;" role="tab" aria-selected="true">-</a></div>
+                    </ul> *@
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card shadow-lg mx-4 mt-4 card-profile-bottomm">
+    <div class="card-body p-3">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header pb-0">
+                        <div class="d-flex align-items-center">
+                            <p class="mb-0">User Profile</p>
+                            <button class="btn btn-primary btn-sm ms-auto" data-bs-toggle="modal" data-bs-target="#editProfile">Edit Profile</button>
+                            <button class="btn btn-primary btn-sm ms-2" data-bs-toggle="modal" data-bs-target="#changePasswordModal">Change Password</button>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <p class="text-uppercase text-sm">User Information</p>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="example-text-input" class="form-control-label">First name</label>
+                                    <input id="firstname" class="form-control" type="text" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="example-text-input" class="form-control-label">Last name</label>
+                                    <input id="lastname" class="form-control" type="text" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="example-text-input" class="form-control-label">Phone number</label>
+                                    <input id="phonenumber" class="form-control" type="text" disabled>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="example-text-input" class="form-control-label">Email address</label>
+                                    <input id="email" class="form-control" type="email" disabled>
+                                </div>
+                            </div>
+                        </div>
+                        <hr class="horizontal dark">
+                        <p class="text-uppercase text-sm">Contact Information</p>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="example-text-input" class="form-control-label">Address</label>
+                                    <input id="address" class="form-control" type="text" disabled>
+                                </div>
+                            </div>
+                            @* <div class="col-md-4">
+                            <div class="form-group">
+                            <label for="example-text-input" class="form-control-label">City</label>
+                            <input class="form-control" type="text" value="New York">
+                            </div>
+                            </div>
+                            <div class="col-md-4">
+                            <div class="form-group">
+                            <label for="example-text-input" class="form-control-label">Country</label>
+                            <input class="form-control" type="text" value="United States">
+                            </div>
+                            </div>
+                            <div class="col-md-4">
+                            <div class="form-group">
+                            <label for="example-text-input" class="form-control-label">Postal code</label>
+                            <input class="form-control" type="text" value="437300">
+                            </div>
+                            </div> *@
+                        </div>
+                        <hr class="horizontal dark">
+
+                        <p class="text-uppercase text-sm">About me</p>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="example-text-input" class="form-control-label">Description</label>
+                                    <textarea id="description" rows="3" cols="50" class="form-control" disabled></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @* <div class="col-md-4">
+            <div class="card card-profile">
+            <img src="../assets/img/bg-profile.jpg" alt="Image placeholder" class="card-img-top">
+            <div class="row justify-content-center">
+            <div class="col-4 col-lg-4 order-lg-2">
+            <div class="mt-n4 mt-lg-n6 mb-4 mb-lg-0">
+            <a href="javascript:;">
+            <img src="../assets/img/team-2.jpg" class="rounded-circle img-fluid border border-2 border-white">
+            </a>
+            </div>
+            </div>
+            </div>
+            <div class="card-header text-center border-0 pt-0 pt-lg-2 pb-4 pb-lg-3">
+            <div class="d-flex justify-content-between">
+            <a href="javascript:;" class="btn btn-sm btn-info mb-0 d-none d-lg-block">Connect</a>
+            <a href="javascript:;" class="btn btn-sm btn-info mb-0 d-block d-lg-none"><i class="ni ni-collection"></i></a>
+            <a href="javascript:;" class="btn btn-sm btn-dark float-right mb-0 d-none d-lg-block">Message</a>
+            <a href="javascript:;" class="btn btn-sm btn-dark float-right mb-0 d-block d-lg-none"><i class="ni ni-email-83"></i></a>
+            </div>
+            </div>
+            <div class="card-body pt-0">
+            <div class="row">
+            <div class="col">
+            <div class="d-flex justify-content-center">
+            <div class="d-grid text-center">
+            <span class="text-lg font-weight-bolder">22</span>
+            <span class="text-sm opacity-8">Friends</span>
+            </div>
+            <div class="d-grid text-center mx-4">
+            <span class="text-lg font-weight-bolder">10</span>
+            <span class="text-sm opacity-8">Photos</span>
+            </div>
+            <div class="d-grid text-center">
+            <span class="text-lg font-weight-bolder">89</span>
+            <span class="text-sm opacity-8">Comments</span>
+            </div>
+            </div>
+            </div>
+            </div>
+            <div class="text-center mt-4">
+            <h5>
+            Mark Davis<span class="font-weight-light">, 35</span>
+            </h5>
+            <div class="h6 font-weight-300">
+            <i class="ni location_pin mr-2"></i>Bucharest, Romania
+            </div>
+            <div class="h6 mt-4">
+            <i class="ni business_briefcase-24 mr-2"></i>Solution Manager - Creative Tim Officer
+            </div>
+            <div>
+            <i class="ni education_hat mr-2"></i>University of Computer Science
+            </div>
+            </div>
+            </div>
+            </div>
+            </div> *@
+        </div>
+    </div>
+</div>
+
+
+<!--   Modal Edit   -->
+<div class="modal fade" id="editProfile" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="height: auto">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Profile</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editProfileForm">
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="editFirstName" class="form-label">First Name</label>
+                            <input type="text" class="form-control" id="editFirstName">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="editLastName" class="form-label">Last Name</label>
+                            <input type="text" class="form-control" id="editLastName">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="editEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="editEmail" disabled>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="editPhoneNumber" class="form-label">Phone Number</label>
+                            <input type="text" class="form-control" id="editPhoneNumber">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <label for="editAddress" class="form-label">Address</label>
+                            <input type="text" class="form-control" id="editAddress">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <label for="editDescription" class="form-label">Description</label>
+                            <textarea id="editDescription" rows="3" cols="50" class="form-control" class="form-control"></textarea>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-md-12">
+                            <label for="editImage" class="form-label">Image</label>
+                            <input type="file" class="form-control" id="editImage">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="saveChangesBtn">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal Change Password -->
+<div class="modal fade" id="changePasswordModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="changePasswordModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="changePasswordModalLabel">Change Password</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="changePasswordForm">
+                    <div class="mb-3">
+                        <label for="oldPassword" class="form-label">Old Password</label>
+                        <input type="password" class="form-control" id="oldPassword" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="newPassword" class="form-label">New Password</label>
+                        <input type="password" class="form-control" id="newPassword" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="confirmPassword" class="form-label">Confirm Password</label>
+                        <input type="password" class="form-control" id="confirmPassword" required>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="changePasswordBtn">Change Password</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/fetchdata/common-profile.js"></script>
+}

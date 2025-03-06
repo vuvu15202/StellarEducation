@@ -1,0 +1,46 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<h1 class="text-center display-4">Thanh toán Momo với .NET Core, C#</h1>
+<div class="container">
+    <form action="/Momo/CreatePaymentUrl" id="frmCreateOrder" method="POST">
+        <input name="ProjectId" value="" id="ProjectId" hidden>
+            
+        
+        <div class="form-group">
+            <label for="FullName">Tên khách hàng</label>
+            <input class="form-control"
+                   id="FullName"
+                   name="FullName"
+                   type="text"
+                   value="">
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="Amount">Số tiền</label>
+            <input class="form-control"
+                   id="Amount"
+                   name="Amount"
+                   type="text"
+                   value="">
+        </div>
+        <br />
+        <div class="form-group">
+            <label for="OrderInfo">Nội dung thanh toán</label>
+            <textarea class="form-control"
+                      cols="20"
+                      id="OrderInfo"
+                      name="OrderInfo"
+                      rows="2"></textarea>
+        </div>
+        <br />
+        <button type="submit" class="text-center btn btn-primary">Thanh toán (Checkout)</button>
+    </form>
+</div>
+<script>
+    const projectId = new URL(window.location.href).searchParams.get('pid');
+    document.getElementById("ProjectId").value = projectId;
+</script>

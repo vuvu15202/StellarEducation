@@ -1,0 +1,93 @@
+﻿@{
+	Layout = "/Views/Shared/Layouts/_StudentLayout.cshtml";
+	ViewData["Title"] = "Khóa học";
+}
+<link href="~/css/responsive.css" rel="stylesheet" />
+<link href="~/css/main_styles.css" rel="stylesheet" />
+
+<link rel="stylesheet" type="text/css" href="~/css/bootstrap4/bootstrap.min.css">
+<link href="~/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="~/plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="~/css/courses.css">
+<link rel="stylesheet" type="text/css" href="~/css/courses_responsive.css">
+
+<!-- Home -->
+
+<div class="home">
+	<div class="breadcrumbs_container">
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<div class="breadcrumbs">
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li>Courses</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Courses -->
+
+<div class="courses">
+	<div class="container">
+		<div class="row">
+			<!-- Courses Main Content -->
+			<div class="col-lg-12">
+				<div class="courses_search_container" style="max-height:240px;">
+					<form action="#" id="courses_search_form" class="scourses_search_form d-flex flex-row align-items-center justify-content-center">
+						<div class="row justify-content-between">
+							<div class="col-md-3 col-xs-4 mb-3 pt-3 d-flex justify-content-center">
+								<input type="search" id="search_input" class="courses_search_input" placeholder="Nhập từ khóa">
+							</div>
+							<div class="col-md-3 col-xs-4 mb-3 pt-3 d-flex justify-content-center">
+								<select id="courses_search_select" class="courses_search_select courses_search_input">
+									<option value="0">Danh mục</option>
+								</select>
+							</div>
+							<div class="col-md-3 col-xs-12 mb-3 pt-3 d-flex justify-content-center">
+								<button type="submit" class="courses_search_button ml-2">Tìm kiếm</button>
+							</div>
+						</div>
+					</form>
+				</div>
+				<div class="courses_container">
+					<div class="row courses_row" id="courses_list">
+					</div>
+					<div class="row pagination_row">
+						<div class="col">
+							<div class="pagination_container d-flex flex-row align-items-center justify-content-start">
+								<ul class="pagination_list" id="pagination_list">
+								</ul>
+								<div class="courses_show_container ml-auto clearfix">
+									<div class="courses_show_text">Showing <span class="courses_showing" id="courses_showing"></span> of <span class="courses_total" id="courses_total"></span> results:</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+		</div>
+	</div>
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/fetchdata/student-courses-index.js"></script>
+
+@*notify*@
+<script src="~/js/toastr.min.js"></script>
+<link href="~/css/toastr.min.css" rel="stylesheet" />
+
+<script src="~/microsoft-signalr/signalr.js"></script>
+<script src="~/microsoft-signalr/signalr.min.js"></script>
+<script src="~/js/notification.js"></script>
+
+

@@ -1,0 +1,72 @@
+image: docker:latest
+
+services:
+  - docker:dind  # Chạy Docker-in-Docker
+
+variables:
+  IMAGE_API: vuvu15202/stellar-api
+  IMAGE_MVC: vuvu15202/stellar-mvc
+  CONTAINER_API: stellar-apiapi
+  CONTAINER_MVC: stellar-mvc
+  DOCKER_DRIVER: overlay2
+  DOCKER_TLS_CERTDIR: ""
+
+stages:
+  - build
+  - docker
+  - deploy
+
+## Bước 1: Build dự án ASP.NET Core ##
+dotnet-build:
+  image: mcr.microsoft.com/dotnet/sdk:6.0
+  stage: build
+  script:
+    - cd backend
+    - dotnet restore
+    - dotnet publish -c Release -o out
+    - cd ../frontend
+    - dotnet restore
+    - dotnet publish -c Release -o out
+  artifacts:
+    paths:
+      - backend/out/
+      - frontend/out/
+  only:
+    - develop
+
+## Bước 2: Build & Push Docker Images ##
+docker-build:
+  image: docker:latest
+  stage: docker
+  variables:
+    DOCKER_HOST: tcp://docker:2375
+  script:
+    - docker login -u $USERNAME_DOCKER -p $PASSWORD_DOCKER
+    - docker-compose build
+    - docker tag cicd_stellar_education-webapi:latest $IMAGE_API:latest
+    - docker tag cicd_stellar_education-webmvc:latest $IMAGE_MVC:latest
+    - docker push $IMAGE_API:latest
+    - docker push $IMAGE_MVC:latest
+  only:
+    - develop
+
+## Bước 3: Deploy lên VPS ##
+deploy-vps:
+  image: alpine:latest
+  stage: deploy
+  before_script:
+    - apk add --no-cache openssh sshpass
+  script:
+    - sshpass -p "$VPS_PASSWORD" ssh -o StrictHostKeyChecking=no $VPS_USER@$VPS_HOST "
+        docker pull $IMAGE_API:latest &&
+        docker pull $IMAGE_MVC:latest &&
+        docker network inspect networkstellar >/dev/null 2>&1 || docker network create networkstellar
+        docker stop $CONTAINER_API || true && 
+        docker rm $CONTAINER_API || true &&
+        docker stop $CONTAINER_MVC || true && 
+        docker rm $CONTAINER_MVC || true &&
+        docker run -d --name $CONTAINER_API --network networkstellar -e ASPNETCORE_ENVIRONMENT=Production -v /home/user/webdataapi:/app/wwwroot -p 5000:5000 $IMAGE_API:latest
+        docker run -d --name $CONTAINER_MVC --network networkstellar -e ASPNETCORE_ENVIRONMENT=Production -v /home/user/webdatamvc:/app/wwwroot -p 5001:5001 $IMAGE_MVC:latest
+      "
+  only:
+    - develop

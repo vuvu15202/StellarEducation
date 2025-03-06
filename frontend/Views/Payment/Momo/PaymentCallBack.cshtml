@@ -1,0 +1,34 @@
+﻿@model ASPNET_MVC.Models.Momo.MomoExecuteResponseModel
+
+@{
+    ViewData["Title"] = "Home Page";
+    var postUrl = "tich-hop-thanh-toan-momo-voi-asp-net-core-7d5e4hP";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Thanh toán Momo với .NET Core, C#</h1>
+    @Model.ErrorCode
+    @if (Model.ErrorCode == 0)
+    {
+        <div class="container">
+            <h1 class="text-success">Thanh Toán Thành Công</h1>
+            <p>Order ID: <strong>@Model.OrderId</strong></p>
+            <p>Amount: <strong>@String.Format("{0:N0}", @Model.Amount)</strong></p>
+            <p>Order Info: <strong>@Model.OrderInfo</strong></p>
+        </div>
+    }
+    else
+    {
+        <div class="container">
+            <h1 class="text-danger">Thanh Toán Thất Bại</h1>
+            <p>Error Code: <strong>@Model.ErrorCode</strong></p>
+            <p>Message: <strong>@Model.LocalMessage</strong></p>
+        </div>
+    }
+</div>
+
+<script>
+    $(document).ready(function () {
+
+    });
+</script>

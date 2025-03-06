@@ -1,0 +1,215 @@
+﻿html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  /*margin-bottom: 60px;*/
+  box-sizing: border-box;
+  /*width: 100vw;*/
+}
+
+#loading {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo,
+.logo_text {
+    display: inline-block;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+
+.logo img {
+    max-width: 100%;
+}
+
+.logo_text {
+    font-family: "Be Vietnam Pro", serif;
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 0.75;
+    color: #384158;
+    vertical-align: middle;
+    margin-left: 7px;
+    -webkit-transition: all 200ms ease;
+    -moz-transition: all 200ms ease;
+    -ms-transition: all 200ms ease;
+    -o-transition: all 200ms ease;
+    transition: all 200ms ease;
+}
+
+    .logo_text span {
+        color: #dc3545;
+    }
+
+.header.scrolled .logo {
+    width: 40px;
+    height: 40px;
+}
+
+.header.scrolled .logo_text {
+    font-size: 24px;
+}
+
+
+/*ring the bell*/
+
+.notification-bell {
+    font-size: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+@keyframes ring {
+    0% {
+        transform: rotate(0);
+    }
+
+    10% {
+        transform: rotate(15deg);
+    }
+
+    20% {
+        transform: rotate(-10deg);
+    }
+
+    30% {
+        transform: rotate(5deg);
+    }
+
+    40% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
+}
+
+.bell-icon.ringing {
+    animation: ring 1s ease-in-out;
+    animation-iteration-count: 10;
+}
+
+/*.notification-count {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    padding: 5px 10px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+*/
+
+.zoom-text {
+    font-weight: bold;
+    animation: zoomEffect 2s infinite; /* Hiệu ứng lặp lại vô hạn */
+}
+
+@keyframes zoomEffect {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5); /* Phóng to 1.5 lần */
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/* Lớp phủ khóa */
+.lock-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8); /* Màu tối che phủ */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    visibility: hidden; /* Mặc định ẩn */
+    opacity: 0; /* Hiệu ứng mờ dần */
+    transition: visibility 0s, opacity 0.5s ease-in-out;
+}
+
+    /* Hiển thị khi kích hoạt */
+    .lock-screen.active {
+        visibility: visible;
+        opacity: 1;
+    }
+
+/* Animation loading */
+.loading {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(255, 255, 255, 0.2);
+    border-top: 5px solid #fff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+

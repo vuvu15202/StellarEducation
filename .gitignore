@@ -1,0 +1,8 @@
+/backend/bin
+/backend/obj
+/frontend/bin
+/frontend/obj
+/.vs
+/backend/.vs
+/frontend/.vs
+.vs

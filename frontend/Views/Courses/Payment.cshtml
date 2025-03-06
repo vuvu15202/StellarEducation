@@ -1,0 +1,580 @@
+﻿@using ASPNET_MVC.Models.Entity;
+@{
+    Layout = "/Views/Shared/Layouts/_StudentLayout.cshtml";
+    ViewData["Title"] = "Payment";
+}
+@{
+    // var user = ViewBag.User as ASPNET_MVC.Models.Entity.User;
+    var user = (Context.Items["UserLoggedIn"] as UserLoggedIn).UserInfo;
+
+}
+<link href="~/css/responsive.css" rel="stylesheet" />
+<link href="~/css/main_styles.css" rel="stylesheet" />
+
+@* <link rel="stylesheet" type="text/css" href="~/css/bootstrap4/bootstrap.min.css"> *@
+<link href="~/plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="~/plugins/colorbox/colorbox.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+<link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+<link rel="stylesheet" type="text/css" href="~/plugins/OwlCarousel2-2.2.1/animate.css">
+<link rel="stylesheet" type="text/css" href="~/css/course.css">
+<link rel="stylesheet" type="text/css" href="~/css/courses_responsive.css">
+
+<!-- Menu -->
+
+<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
+    <div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
+    <div class="search">
+        <form action="#" class="header_search_form menu_mm">
+            <input type="search" class="search_input menu_mm" placeholder="Search" required="required">
+            <button class="header_search_button d-flex flex-column align-items-center justify-content-center menu_mm">
+                <i class="fa fa-search menu_mm" aria-hidden="true"></i>
+            </button>
+        </form>
+    </div>
+    <nav class="menu_nav">
+        <ul class="menu_mm">
+            <li class="menu_mm"><a href="index.html">Home</a></li>
+            <li class="menu_mm"><a href="#">About</a></li>
+            <li class="menu_mm"><a href="#">Courses</a></li>
+            <li class="menu_mm"><a href="#">Blog</a></li>
+            <li class="menu_mm"><a href="#">Page</a></li>
+            <li class="menu_mm"><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</div>
+
+<!-- Home -->
+
+<div class="home">
+    <div class="breadcrumbs_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="breadcrumbs">
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/courses/index">Courses</a></li>
+                            <li>Course Details</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Course -->
+
+<div class="course">
+    <div class="container">
+        <div class="row">
+            <!-- Course -->
+            <div class="col-lg-8">
+
+                <div class="course_container">
+                    <div class="course_title" id="course_title">Software Training</div>
+                    <!-- Course Image -->
+                    <div class="course_image"><img style="width:50%;" id="course_image" alt=""></div>
+                    <div style="margin-top: 0px !important;" class="course_info d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+
+                        <!-- Course Info Item -->
+                        <div class="col-lg-6 course_info_item">
+                            <div class="course_info_title">Reviews:</div>
+                            <div class="rating_r rating_r_4"><i></i><i></i><i></i><i></i><i></i></div>
+                        </div>
+
+                        <!-- Course Info Item -->
+                        <div class="col-lg-6 course_info_item" id="course_category_info">
+                            <div class="course_info_title">Categories:</div>
+                            <div class="course_info_text" id="category_name">Languages</div>
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Course Tabs -->
+                    <div class="course_tabs_container">
+                        <div class="tabs d-flex flex-row align-items-center justify-content-start">
+                            <div class="tab active">description</div>
+                            <div class="tab">lesson</div>
+                            <div class="tab">reviews</div>
+                        </div>
+                        <div class="tab_panels">
+
+                            <!-- Description -->
+                            <div class="tab_panel active">
+                                <div class="tab_panel_title" id="course_des_title">Software Training</div>
+                                <div class="tab_panel_content">
+                                    <div class="tab_panel_text" id="course_description">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Lesson -->
+                            <div class="tab_panel tab_panel_2">
+                                <div class="tab_panel_content">
+                                    <div class="tab_panel_title" id="course_lesson_title">Software Training</div>
+                                    <div class="tab_panel_content" id="course_lessons_list">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Reviews -->
+                            <div class="tab_panel tab_panel_3">
+                                <div class="tab_panel_title">Course Review</div>
+
+                                <!-- Rating -->
+                                <div class="review_rating_container">
+                                    <div class="review_rating">
+                                        <div class="review_rating_num">4.5</div>
+                                        <div class="review_rating_stars">
+                                            <div class="rating_r rating_r_4"><i></i><i></i><i></i><i></i><i></i></div>
+                                        </div>
+                                        <div class="review_rating_text">(28 Ratings)</div>
+                                    </div>
+                                    <div class="review_rating_bars">
+                                        <ul>
+                                            <li><span>5 Star</span><div class="review_rating_bar"><div style="width:90%;"></div></div></li>
+                                            <li><span>4 Star</span><div class="review_rating_bar"><div style="width:75%;"></div></div></li>
+                                            <li><span>3 Star</span><div class="review_rating_bar"><div style="width:32%;"></div></div></li>
+                                            <li><span>2 Star</span><div class="review_rating_bar"><div style="width:10%;"></div></div></li>
+                                            <li><span>1 Star</span><div class="review_rating_bar"><div style="width:3%;"></div></div></li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!-- Comments -->
+                                <div class="comments_container" id="comments_contain">
+
+                                    @if (user == null)
+                                    {
+                                        <div class="add_comment_container">
+                                            <div class="add_comment_title">Add a review</div>
+                                            <div class="add_comment_text">You must be <a href="/auth/login">logged</a> in to post a comment.</div>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <li>
+                                            <div class="comment_item d-flex flex-row align-items-start jutify-content-start">
+                                                <div class="comment_content">
+                                                    <form class="comment_form" id="commentForm">
+                                                        <div class="row">
+                                                            <div class="col-md-10">
+                                                                <div class="form-group">
+                                                                    <label for="Content">Comment:</label>
+                                                                    <textarea class="form-control " rows="3" id="commentContent" required></textarea>
+                                                                    <span class="text-danger"></span>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-md-2 " style="margin: auto;">
+                                                                <div class="form-group">
+                                                                    <input type="submit" value="Submit" class="btn btn-primary" />
+                                                                </div>
+                                                            </div>
+
+                                                        </div>
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </li>
+
+
+                                    }
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Course Sidebar -->
+            <div class="col-lg-4">
+                <div class="sidebar">
+
+                    <!-- Feature -->
+                    <div class="sidebar_section">
+                        <div class="sidebar_section_title">Course Feature</div>
+                        <div class="sidebar_feature">
+                            <div class="feature_list">
+                                <!-- Feature -->
+                                <div class=" d-flex flex-row align-items-center justify-content-start">
+                                    <div class="feature_title"><i class="fa fa-file-text-o" aria-hidden="true"></i><span>Số bài học:</span></div>
+                                    <div class="feature_text ml-auto mt-4" id="numberLesson">10</div>
+                                </div>
+
+                                <!-- Feature -->
+                                <div class=" d-flex flex-row align-items-center justify-content-start">
+                                    <div class="feature_title"><i class="fa fa-registered" aria-hidden="true"></i><span>Lượt đăng ký:</span></div>
+                                    <div class="feature_text ml-auto mt-4" id="numberEnrolled">35</div>
+                                </div>
+
+                                <!-- Feature -->
+                                <div class=" d-flex flex-row align-items-center justify-content-start">
+                                    <div class="feature_title"><i class="fa fa-clock-o" aria-hidden="true"></i><span>Tổng thời gian:</span></div>
+                                    <div class="feature_text ml-auto mt-4" id="numberTime">1:23:23</div>
+                                </div>
+
+                                <!-- Feature -->
+                                <div class=" d-flex flex-row align-items-center justify-content-start">
+                                    <div class="feature_title"><i class="fa fa-user-circle-o" aria-hidden="true"></i><span>Giảng viên:</span></div>
+                                    <div class="feature_text ml-auto mt-4" id="lecturerName">John Wick</div>
+                                </div>
+
+                                <!-- Feature -->
+                                <div class=" d-flex flex-row align-items-center justify-content-start">
+                                    <div class="feature_title"><i class="fa fa-language" aria-hidden="true"></i><span>Ngôn ngữ:</span></div>
+                                    <div class="feature_text ml-auto mt-4" id="language">Vietnamese</div>
+                                </div>
+
+                                @* <!-- Feature -->
+                                <div class=" d-flex flex-row align-items-center justify-content-start">
+                                <div class="feature_title"><i class="fa fa-star" aria-hidden="true"></i><span>Lượt đánh giá:</span></div>
+                                <div class="feature_text ml-auto mt-4" id="numberRating">35</div>
+                                </div> *@
+
+                                <!-- Feature -->
+                                <div class=" d-flex flex-row align-items-center justify-content-start">
+                                    <div class="feature_title"><i class="fa fa-wrench" aria-hidden="true"></i><span>Cập nhật gần nhất:</span></div>
+                                    <div class="feature_text ml-auto mt-4" id="updatedAt">01 January 2025</div>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="d-flex justify-content-between">
+                                <div class="course_price" id="course_price">$180</div>
+
+                                <button id="enroll_button" class="btn btn-primary">Tham gia</button>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class=" justify-content-around d-none"> //d-flex
+                        <!-- Button trigger modal -->
+                        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">
+                            <img src="/images/MoMo_Logo.png" width="80px" height="80px" />
+                        </button>
+                        <!--VN Pay -->
+                        <button type="button" class="btn" data-toggle="modal" data-target="#exampleModalVnPay">
+                            <img src="/images/vnpaylogo.png" width="80px" height="80px" />
+                        </button>
+                    </div>
+                    
+
+                    <!-- Modal MOMO-->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">Momo Payment</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <form action="/Momo/CreatePaymentUrl" id="frmCreateOrder" method="POST">
+                                    <div class="modal-body">
+
+
+                                        <div class="container">
+
+                                            <input name="courseId" id="courseIdMomo" type="hidden">
+
+
+                                            <div class="form-group">
+                                                <label for="FullName">Tên khách hàng</label>
+                                                <input class="form-control"
+                                                       id="FullName"
+                                                       name="FullName"
+                                                       type="text"
+                                                       value="">
+                                            </div>
+                                            <br />
+                                            <div class="form-group">
+                                                <label for="AmountMOMO">Số tiền</label>
+                                                <input class="form-control"
+                                                       id="AmountMOMO"
+                                                       name="Amount"
+                                                       type="number"
+                                                       readonly>
+                                            </div>
+                                            <br />
+                                            <div class="form-group">
+                                                <label for="OrderInfo">Nội dung thanh toán</label>
+                                                <textarea class="form-control"
+                                                          cols="20"
+                                                          id="OrderInfo"
+                                                          name="OrderInfo"
+                                                          rows="2"></textarea>
+                                            </div>
+                                            <br />
+
+
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="text-center btn btn-primary">Thanh Toán</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    <!-- Modal VNPAY-->
+                    <div class="modal fade" id="exampleModalVnPay" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">VnPay Payment</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <form action="/VNPay/CreatePaymentUrl" id="frmCreateOrder" method="POST">
+                                    <div class="modal-body">
+
+                                        <div class="form-group" hidden>
+                                            <label for="ordertype">Loại hàng hóa </label>
+                                            <select name="OrderType" id="ordertype" class="form-control">
+                                                <option value="electric">Quỹ</option>
+
+                                            </select>
+                                        </div>
+                                        <input name="courseId" id="courseIdVnPay" type="hidden">
+
+
+                                        <br />
+                                        <div class="form-group">
+                                            <label for="Name">Tên khách hàng</label>
+                                            <input class="form-control"
+                                                   id="Name"
+                                                   name="Name"
+                                                   type="text">
+                                        </div>
+                                        <br />
+                                        <div class="form-group">
+                                            <label for="AmountVNPAY">Số tiền</label>
+                                            <input class="form-control"
+                                                   id="AmountVNPAY"
+                                                   name="Amount"
+                                                   type="number"
+                                                   readonly>
+                                        </div>
+                                        <br />
+                                        <div class="form-group">
+                                            <label for="OrderDescription">Nội dung thanh toán</label>
+                                            <textarea class="form-control"
+                                                      cols="20"
+                                                      id="OrderDescription"
+                                                      name="OrderDescription"
+                                                      rows="2"></textarea>
+                                        </div>
+                                        <br />
+
+
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Thanh Toán</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Related Course -->
+        <div class="row">
+            <div class="courses_container">
+                <div class="row courses_row" id="courses_list">
+                    <h2 class="col-lg-12 my-3">Khóa học liên quan</h2>
+                    <div class="col-lg-3 course_col">
+                        <div class="course py-0">
+                            <div class="course_image">
+                                <img src="/uploads/SQLServerCoBan.png"
+                                     alt="SQLServer Cơ Bản"
+                                     style="width: 100%" />
+                            </div>
+                            <div class="course_body">
+                                <h3 class="course_title">
+                                    <a href="/Courses/Detail?courseId=2">SQLServer Cơ Bản</a>
+                                </h3>
+                            </div>
+                            <div class="course_footer">
+                                <div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
+                                    <div class="course_price ml-auto">Free</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 course_col">
+                        <div class="course py-0">
+                            <div class="course_image">
+                                <img src="https://localhost:5000/uploads/final_logo.png"
+                                     alt="MySQL Cơ Bản"
+                                     style="width: 100%" />
+                            </div>
+                            <div class="course_body">
+                                <h3 class="course_title">
+                                    <a href="/Courses/Detail?courseId=3">MySQL Cơ Bản</a>
+                                </h3>
+                            </div>
+                            <div class="course_footer">
+                                <div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
+                                    <div class="course_price ml-auto">Free</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 course_col">
+                        <div class="course py-0">
+                            <div class="course_image">
+                                <img src="/uploads/MySQNangCao.png"
+                                     alt="MySQL Nâng Cao"
+                                     style="width: 100%" />
+                            </div>
+                            <div class="course_body">
+                                <h3 class="course_title">
+                                    <a href="/Courses/Detail?courseId=5">MySQL Nâng Cao</a>
+                                </h3>
+                            </div>
+                            <div class="course_footer">
+                                <div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
+                                    <div class="course_price ml-auto">299.000đ</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 course_col">
+                        <div class="course py-0">
+                            <div class="course_image">
+                                <img src="/uploads/Unity2DNangCao.png"
+                                     alt="Unity 2D Nâng Cao"
+                                     style="width: 100%" />
+                            </div>
+                            <div class="course_body">
+                                <h3 class="course_title">
+                                    <a href="/Courses/Detail?courseId=6">Unity 2D Nâng Cao</a>
+                                </h3>
+                            </div>
+                            <div class="course_footer">
+                                <div class="course_footer_content d-flex flex-row align-items-center justify-content-start">
+                                    <div class="course_price ml-auto">299.000đ</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Newsletter -->
+
+<div class="newsletter">
+    <div class="newsletter_background" style="background-image:url(/images/newsletter_background.jpg)"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="newsletter_container d-flex flex-lg-row flex-column align-items-center justify-content-start">
+
+                    <!-- Newsletter Content -->
+                    <div class="newsletter_content text-lg-left text-center">
+                        <div class="newsletter_title">sign up for news and offers</div>
+                        <div class="newsletter_subtitle">Subcribe to lastest smartphones news & great deals we offer</div>
+                    </div>
+
+                    <!-- Newsletter Form -->
+                    <div class="newsletter_form_container ml-lg-auto">
+                        <form action="#" id="newsletter_form" class="newsletter_form d-flex flex-row align-items-center justify-content-center">
+                            <input type="email" class="newsletter_input" placeholder="Your Email" required="required">
+                            <button type="submit" class="newsletter_button">subscribe</button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- reply form-->
+<template id="replyFormTemplate">
+    <ul>
+        <li class="replyForm">
+            <div class="comment_item d-flex flex-row align-items-start jutify-content-start">
+                <div class="comment_content">
+                    <form class="comment_form">
+                        <div class="row">
+                            <div class="col-md-10">
+                                <input type="hidden" name="CommentId" value="">
+                                <div class="form-group">
+                                    <label for="Content">Reply:</label>
+                                    <textarea class="form-control " rows="3" id="content"></textarea>
+                                    <span class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-2 " style="margin: auto;">
+                                <div class="form-group">
+                                    <input type="button" id="submitRepForm" value="reply" class="btn btn-primary" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </li>
+    </ul>
+</template>
+
+
+<script src="~/js/jquery-3.2.1.min.js"></script>
+<script src="~/fetchdata/course-detail-comment.js"></script>
+<script src="~/css/bootstrap4/popper.js"></script>
+@* <script src="~/css/bootstrap4/bootstrap.min.js"></script> *@
+<script src="~/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
+<script src="~/plugins/easing/easing.js"></script>
+<script src="~/plugins/parallax-js-master/parallax.min.js"></script>
+<script src="~/plugins/colorbox/jquery.colorbox-min.js"></script>
+<script src="~/js/course.js"></script>
+
+<script src="~/fetchdata/student-coursedetail.js"></script>
+
+@*notify*@
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/toastr.min.js"></script>
+<link href="~/css/toastr.min.css" rel="stylesheet" />
+<script src="~/js/notification.js"></script>
+
+<script>
+    // Lấy URL hiện tại
+    var currentUrl = window.location.href;
+    // Tạo một đối tượng URLSearchParams từ URL
+    var searchParams = new URLSearchParams(new URL(currentUrl).search);
+    var statuscode = searchParams.get('statuscode');
+    if (statuscode) {
+        switch (statuscode) {
+            case "1":
+                toastr.success("Chúc mừng bạn đã đăng ký thành công. Bắt đầu ngay!", 'Notification', { timeOut: 3000 });
+                break;
+            case "2":
+                toastr.error("Lỗi trong quá trình thực hiện giao dịch, vui lòng kiểm tra lại!", 'Notification', { timeOut: 3000 });
+                break;
+            case "3":
+                toastr.warning("Khóa học này có tính phí! Vui lòng liên hệ với chúng tôi để thanh toán học phí!", 'Notification', { timeOut: 3000 });
+                break;
+            case "4":
+                toastr.error("Không tìm thấy khóa học!", 'Notification', { timeOut: 3000 });
+                break;
+            default:
+        }
+    }
+</script>

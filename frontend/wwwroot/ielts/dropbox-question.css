@@ -1,0 +1,55 @@
+﻿
+
+.question {
+    /*margin-bottom: 20px;*/
+}
+
+.answer {
+    width: 100px;
+    padding:5px 10px 5px 10px;
+    margin: 5px;
+    background-color: #f0f0f0;
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.dropbox {
+    width: 150px;
+    height: 40px;
+    border: 2px dashed #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    position: relative;
+}
+
+    .dropbox.filled {
+        border-color: #4caf50;
+        background-color: #e8f5e9;
+    }
+
+.dropbox-hover {
+    border-color: #007bff;
+    background-color: #d9edf7;
+}
+
+.clear-btn {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 12px;
+    cursor: pointer;
+    display: none; /* Ẩn mặc định */
+}

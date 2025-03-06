@@ -1,0 +1,132 @@
+﻿<div class="col-12 d-flex justify-content-end">
+	<a class="navbar-brand" href="#"></a>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+</div>
+<div class="collapse navbar-collapse ps-2 mb-3" id="navbarNavDropdown">
+	@* <ul class="navbar-nav">
+		<li class="nav-item active">
+			<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#">Features</a>
+		</li>
+		<li class="nav-item">
+			<a class="nav-link" href="#">Pricing</a>
+		</li>
+		<li class="nav-item dropdown">
+			<a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
+				Dropdown link
+			</a>
+			<div class="dropdown-menu">
+				<a class="dropdown-item" href="#">Action</a>
+				<a class="dropdown-item" href="#">Another action</a>
+				<a class="dropdown-item" href="#">Something else here</a>
+			</div>
+		</li>
+	</ul> *@
+	<ul class="main_nav row">
+		<li class="nav-item pt-2"><a class="nav-" href="/">Trang chủ  <span class="sr-only">(current)</span></a></li>
+		<li class="nav-item pt-2"><a class="nav-" href="/IELTS/trial">Thi thử</a></li>
+		<li class="nav-item pt-2"><a class="nav-" href="/courses/index">Các khóa học</a></li>
+		<li class="nav-item pt-2"><a class="nav-" href="/Home/contact">Liên hệ</a></li>
+		<li class="nav-item pt-2"><a class="nav- d-md-block d-lg-none" href="/Auth/login">Login/ Logout</a></li>
+		<li class="nav-item pt-2">
+			<div class="dropdown nav-">
+				<div class=" dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<i class="fa fa-user text-sm text-dark" style="font-size:20px;"></i>
+				</div>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+					<a class="dropdown-item" href="/Account/Userprofile">Hồ sơ của tôi</a>
+					<a class="dropdown-item" href="/Student/Enroll">Khóa học của tôi</a>
+					<a class="dropdown-item" href="/Student/Examination">Bài thi của tôi</a>
+				</div>
+			</div>
+		</li>
+		<li>
+
+		</li>
+	</ul>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		$(document).ready(function () {
+			// Lấy URL hiện tại (chỉ phần path, không có domain)
+			var currentPath = window.location.pathname;
+
+			// Lặp qua tất cả các thẻ <a> trong menu
+			$('.main_nav a').each(function () {
+				var linkPath = $(this).attr('href');
+
+				// Nếu href của thẻ <a> khớp với URL hiện tại, thêm class active
+				if (currentPath === linkPath) {
+					$(this).parent().addClass('active');
+				}
+			});
+		});
+	</script>
+	<style>
+		span.notification-badge {
+			position: relative;
+			top: -10px;
+			right: 10px;
+			border: $white 1px solid;
+			border-radius: 30%;
+		}
+	</style>
+</div>
+
+@* <ul class="main_nav row my-4">
+	<li><a class="active" href="/">Trang chủ</a></li>
+	<li><a class="" href="/courses/index">Các khóa học</a></li>
+	<li><a class="" href="/Home/contact">Liên hệ</a></li>
+	<li>
+		<div class="dropdown">
+			<div class=" dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<i class="fa fa-user text-sm text-dark" style="font-size:20px;"></i>
+			</div>
+			<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+				<a class="dropdown-item" href="/Account/Userprofile">Hồ sơ của tôi</a>
+				<a class="dropdown-item" href="/Student/Enroll">Khóa học của tôi</a>
+				<a class="dropdown-item" href="/Student/Examination">Bài thi của tôi</a>
+			</div>
+		</div>
+	</li>
+	<li>
+		
+	</li>
+	
+</ul> *@
+
+@* <div class="notification-bell">
+		<i class="fa fa-bell bell-icon"><span class="position-absolute top--5 start-100 translate-middle badge rounded-pill bg-danger">+9</span></i>
+		</div> *@
+
+@* <div class="dropdown">
+		<div class=" dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		<a href="javascript:;">
+		<i class="fa fa-lg fa-bell bell-icon" style="font-size:20px;"></i>
+		<span class="notification-badge badge badge-danger" id="noticount">0</span>
+		</a>
+		</div>
+		<div class="dropdown-menu p-1" style="width: 270px !important; border-radius:20px;" aria-labelledby="dropdownMenuButton">
+		<ul id="ulnoti">
+		<li class="border-2 bg-info opacity-10 m-2 p-2" style="border-radius:20px;">
+		<div class="">
+		<h5>Hello</h5>
+		<div class="ml-2" style="font-size:13px;">
+		sdfjhsidbifjdvbv kxbvkdbv skdfj sdfbksd lssdf ahf èhalfah
+		</div>
+		</div>
+		</li>
+		<li class="border-2 bg-info opacity-10 m-2 p-2" style="border-radius:20px;">
+		<div class="">
+		<h5></h5>
+		<div class="ml-2" style="font-size:13px;">
+		Không có thông báo
+		</div>
+		</div>
+		</li>
+		</ul>
+		</div>
+		</div> *@

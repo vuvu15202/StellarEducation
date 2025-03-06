@@ -1,0 +1,345 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "/Views/Shared/Layouts/_AdminLayout.cshtml";
+    ViewData["Title"] = "Question Bank";
+}
+
+<div class="row">
+    <div class="col-lg-8" style="height: 650px;">
+        <div class="card h-100">
+            <div class="card-header pb-0 p-3">
+                <div class="row">
+                    <div class="col-6 d-flex align-items-center">
+                        <h6 class="mb-0">Tìm Question Bank</h6>
+                    </div>
+                    <div class="col-6 text-end">
+                        <!-- <button class="btn btn-outline-primary btn-sm mb-0">View All</button> -->
+                        <input name="searchQuestionBank" id="searchQuestionBank" class="form-control" placeholder="Input ExamCode Here">
+                    </div>
+                </div>
+            </div>
+            <div class="card-body p-3 pb-0" style="overflow-y: scroll; height: 30vh">
+                <table class="table table-striped align-items-center mb-0">
+                    <thead>
+                        <tr>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">examCode</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">startDate</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">endDate</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">isClosed</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">lecturer</th>
+                            <th class="text-secondary opacity-7"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="questionBanks">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card h-100">
+            <div class="card-header pb-0 p-3">
+                <div class="row">
+                    <div class="col-11 d-flex align-items-center">
+                        <h6 class="mb-0">Thêm/sửa thông tin đề thi</h6>
+                    </div>
+                    <div class="col-1 text-end">
+                        <!-- <button class="btn btn-outline-primary btn-sm mb-0">View All</button> -->
+                        @* <input name="inputSearchProject" id="inputSearchProject" class="form-control" placeholder="Project title"> *@
+                    </div>
+                </div>
+            </div>
+            <div class="card-body p-3 pb-0" style="overflow-y: scroll; height: 30vh">
+                <div>
+                    <div class="form-group">
+                        <label for="questionBankId">QuestionBank ID</label>
+                        <input type="number" class="form-control" id="questionBankId" value="0" disabled>
+                    </div>
+                    <div class="form-group">
+                        <label for="examCode">examCode</label>
+                        <input type="text" class="form-control" id="examCode" placeholder="Enter examCode">
+                    </div>
+                    <div class="form-group">
+                        <label for="startDate">StartDate</label>
+                        <input type="datetime-local" class="form-control" id="startDate">
+                    </div>
+                    <div class="form-group">
+                        <label for="endDate">EndDate</label>
+                        <input type="datetime-local" class="form-control" id="endDate">
+                    </div>
+                    <div class="form-group form-check row d-flex">
+                        <div class="col-md-5">
+                            <span>
+                                <input type="checkbox" class="form-check-input" id="isClosed">
+                                <label class="form-check-label" for="isClosed">Is Closed</label>
+                            </span>
+                        </div>
+                        <div class="col-md-5">
+                            <span>
+                                <input type="checkbox" class="form-check-input" id="isPrivate" checked>
+                                <label class="form-check-label" for="isPrivate">Is Private</label>
+                            </span>
+                        </div>
+                    </div>
+                    <div id="createQuestionBank" type="button" class="btn btn-primary">Submit</div>
+                    <button type="button" class="btn btn-info" id="clearQuestionBank">Clear</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row">
+    @* <div class="col-md-7 mt-4">
+    <div class="card" style="min-height: 350px">
+    <div class="card-header pb-0 px-3">
+    <h6 class="mb-0">Giao dịch đang thực hiện</h6>
+    </div>
+    <div class="card-body pt-4 p-3">
+    <ul class="list-group" id="handlingbills">
+    <li class="list-group-item border-0 d-flex p-4 mb-2 bg-gray-100 border-radius-lg">
+    <div class="d-flex flex-column">
+    <h6 class="mb-3 text-sm">Oliver Liam</h6>
+    <span class="mb-2 text-xs">Company Name: <span class="text-dark font-weight-bold ms-sm-2">Viking Burrito</span></span>
+    <span class="mb-2 text-xs">Email Address: <span class="text-dark ms-sm-2 font-weight-bold">oliver@burrito.com</span></span>
+    <span class="text-xs">VAT Number: <span class="text-dark ms-sm-2 font-weight-bold">FRB1235476</span></span>
+    </div>
+    <div class="ms-auto text-end">
+    <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a>
+    <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+    </div>
+    </li>
+    <li class="list-group-item border-0 d-flex p-4 mb-2 mt-3 bg-gray-100 border-radius-lg">
+    <div class="d-flex flex-column">
+    <h6 class="mb-3 text-sm">Lucas Harper</h6>
+    <span class="mb-2 text-xs">Company Name: <span class="text-dark font-weight-bold ms-sm-2">Stone Tech Zone</span></span>
+    <span class="mb-2 text-xs">Email Address: <span class="text-dark ms-sm-2 font-weight-bold">lucas@stone-tech.com</span></span>
+    <span class="text-xs">VAT Number: <span class="text-dark ms-sm-2 font-weight-bold">FRB1235476</span></span>
+    </div>
+    <div class="ms-auto text-end">
+    <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a>
+    <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+    </div>
+    </li>
+    <li class="list-group-item border-0 d-flex p-4 mb-2 mt-3 bg-gray-100 border-radius-lg">
+    <div class="d-flex flex-column">
+    <h6 class="mb-3 text-sm">Ethan James</h6>
+    <span class="mb-2 text-xs">Company Name: <span class="text-dark font-weight-bold ms-sm-2">Fiber Notion</span></span>
+    <span class="mb-2 text-xs">Email Address: <span class="text-dark ms-sm-2 font-weight-bold">ethan@fiber.com</span></span>
+    <span class="text-xs">VAT Number: <span class="text-dark ms-sm-2 font-weight-bold">FRB1235476</span></span>
+    </div>
+    <div class="ms-auto text-end">
+    <a class="btn btn-link text-danger text-gradient px-3 mb-0" href="javascript:;"><i class="far fa-trash-alt me-2"></i>Delete</a>
+    <a class="btn btn-link text-dark px-3 mb-0" href="javascript:;"><i class="fas fa-pencil-alt text-dark me-2" aria-hidden="true"></i>Edit</a>
+    </div>
+    </li>
+    </ul>
+    </div>
+    </div>
+    </div> *@
+    @* <div class="col-md-5 mt-4">
+    <div class="card h-100 mb-4">
+    <div class="card-header pb-0 px-3">
+    <div class="row">
+    <div>
+    Tìm Kiếm Giao dịch
+    <i class="far fa-calendar-alt me-2"></i>
+    </div>
+    <div class="col-md-4 d-flex justify-content-end align-items-center">
+    <input type="datetime-local" id="fromDate" class="form-control">
+    </div>
+    <div class="col-md-4 d-flex justify-content-end align-items-center">
+    <input type="datetime-local" id="toDate" class="form-control">
+    </div>
+    <div class="col-md-4  d-flex justify-content-center align-items-center mb-0">
+    <button id="btnFilderDate" class="btn">Tìm Kiếm</button>
+    </div>
+    </div>
+    </div>
+    <div class="card-body pt-4 p-3" id="listOfbills" style="overflow-y: scroll; height: 50vh;">
+    <h6 class="text-uppercase text-body text-xs font-weight-bolder mb-3">Newest</h6>
+    <ul class="list-group">
+    <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+    <div class="d-flex align-items-center">
+    <button class="btn btn-icon-only btn-rounded btn-outline-danger mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-arrow-down"></i></button>
+    <div class="d-flex flex-column">
+    <h6 class="mb-1 text-dark text-sm">Netflix</h6>
+    <span class="text-xs">27 March 2020, at 12:30 PM</span>
+    </div>
+    </div>
+    <div class="d-flex align-items-center text-danger text-gradient text-sm font-weight-bold">
+    - $ 2,500
+    </div>
+    </li>
+    <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+    <div class="d-flex align-items-center">
+    <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></button>
+    <div class="d-flex flex-column">
+    <h6 class="mb-1 text-dark text-sm">Apple</h6>
+    <span class="text-xs">27 March 2020, at 04:30 AM</span>
+    </div>
+    </div>
+    <div class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold">
+    + $ 2,000
+    </div>
+    </li>
+    </ul>
+    <h6 class="text-uppercase text-body text-xs font-weight-bolder my-3">Yesterday</h6>
+    <ul class="list-group">
+    <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+    <div class="d-flex align-items-center">
+    <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></button>
+    <div class="d-flex flex-column">
+    <h6 class="mb-1 text-dark text-sm">Stripe</h6>
+    <span class="text-xs">26 March 2020, at 13:45 PM</span>
+    </div>
+    </div>
+    <div class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold">
+    + $ 750
+    </div>
+    </li>
+    <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+    <div class="d-flex align-items-center">
+    <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></button>
+    <div class="d-flex flex-column">
+    <h6 class="mb-1 text-dark text-sm">HubSpot</h6>
+    <span class="text-xs">26 March 2020, at 12:30 PM</span>
+    </div>
+    </div>
+    <div class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold">
+    + $ 1,000
+    </div>
+    </li>
+    <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+    <div class="d-flex align-items-center">
+    <button class="btn btn-icon-only btn-rounded btn-outline-success mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-arrow-up"></i></button>
+    <div class="d-flex flex-column">
+    <h6 class="mb-1 text-dark text-sm">PRN231</h6>
+    <span class="text-xs">26 March 2020, at 08:30 AM</span>
+    </div>
+    </div>
+    <div class="d-flex align-items-center text-success text-gradient text-sm font-weight-bold">
+    + $ 2,500
+    </div>
+    </li>
+    <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+    <div class="d-flex align-items-center">
+    <button class="btn btn-icon-only btn-rounded btn-outline-dark mb-0 me-3 btn-sm d-flex align-items-center justify-content-center"><i class="fas fa-exclamation"></i></button>
+    <div class="d-flex flex-column">
+    <h6 class="mb-1 text-dark text-sm">Webflow</h6>
+    <span class="text-xs">26 March 2020, at 05:00 AM</span>
+    </div>
+    </div>
+    <div class="d-flex align-items-center text-dark text-sm font-weight-bold">
+    Pending
+    </div>
+    </li>
+    </ul>
+    </div>
+    </div>
+    </div> *@
+</div>
+
+
+
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+Launch static backdrop modal
+</button> -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="height: 85vh; ">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Danh sách thí sinh</h1>
+                <div type="button" data-bs-dismiss="modal" aria-label="Close"><i class="fas fa-window-close fa-lg text-danger"></i></div>
+            </div>
+            <div class="modal-body" style=" overflow-y: scroll;">
+                @* <h6 class="text-uppercase text-body text-xs font-weight-bolder mb-3"></h6>
+                <ul class="list-group px-6" id="course-detail">
+                    <li class="list-group-item border-0 d-flex justify-content-between ps-0 mb-2 border-radius-lg">
+                        <div class="d-flex align-items-center">
+                            <button class="btn btn-icon-only btn-rounded btn-outline-danger mb-0 me-3 btn-sm d-flex align-items-center justify-content-center">
+                                <i class="fas fa-arrow-down"></i>
+                            </button>
+                            <div class="d-flex flex-column">
+                                <h6 class="mb-1 text-dark text-sm">Netflix</h6>
+                                <span class="text-xs">27 March 2020, at 12:30 PM</span>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center text-danger text-gradient text-sm font-weight-bold">
+                            - $ 2,500
+                        </div>
+                    </li>
+                   
+                </ul> *@
+                <table class="table align-items-center mb-0">
+                    <thead>
+                        <tr>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">FirstName</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">LastName</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Email</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Address</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">IsComplete</th>
+                            <th class="text-secondary opacity-7"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="candidates">
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer d-flex">
+                <div class="col-md-12">
+                    <input class="btn" type="file" name="file-candidates" id="file-candidates" accept=".xls, .xlsx" />
+                    <button type="button" class="btn btn-primary" id="submit-file-candidates">Thêm thí sinh</button>
+                    <button class="btn btn-link text-danger text-sm mb-0 px-0 ms-4" data-id="${value.questionBankId}">
+                        <a id="exportLink" href="http://localhost:5000/api/QuestionBanks/template/download/candidates" download="Template_Candidates_List.xlsx">
+                            <i class="fas fa-download text-lg me-1" style="color: #bc00f0;"></i> Download Template
+                        </a>
+                    </button>
+                </div>
+                @* <div class="col-md-3">
+                    <button type="button" class="btn btn-secondary col-md-3" data-bs-dismiss="modal">Close</button>
+                </div> *@
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<!-- Button trigger modal -->
+<!-- <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdropp">
+Launch static backdrop modal
+</button> -->
+<!-- Modal View handling detail-->
+<div class="modal fade" id="staticBackdropp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Handling Bill Details</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="handling-bill-details">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Understood</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/fetchdata/admin-questionbanks.js"></script>
+}

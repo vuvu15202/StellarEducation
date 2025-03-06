@@ -1,0 +1,144 @@
+﻿
+@{
+    ViewData["Title"] = "Thông báo";
+    Layout = "~/Views/Shared/Layouts/_AdminLayout.cshtml";
+}
+<div class="row">
+    <div class="col-8">
+        <div class="card mb-4">
+            <div class="card-header pb-0 d-flex justify-content-between">
+                <h6>@ViewData["Title"]</h6>
+                <div class="d-flex">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" id="previousBtn" href="#">&lt;</a>
+                            </li>
+                            <li class="page-item">
+                                <a class="page-link" id="nextBtn" href="#">&gt;</a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <div class="mb-2 ms-1">
+                        <div class="input-group">
+                            <span class="input-group-text text-body"><i class="fas fa-search" aria-hidden="true"></i></span>
+                            <input type="text" id="inputForm" class="form-control" placeholder="Search by title">
+                        </div>
+                    </div>
+                </div>               
+            </div>
+            <div class="card-body px-0 pt-0 pb-2">
+                <div class="table-responsive" style="height: 535px">                   
+                    <table class="table table-striped align-items-center mb-0" style="height: 100px" id="projectRecord">
+                        <thead>
+                            <tr>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">NotiTo</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Noti At</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Title</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7" style="width:190px;">Content</th>
+                                <th class="text-center text-uppercase text-secondary text-xxs font-weight-bolder opacity-7"></th>
+
+                            </tr>
+                        </thead>
+                        <tbody id="Noties">
+                            @* <tr>
+                                <td>
+                                    <p class="text-xs font-weight-bold mb-0">123</p>
+                                </td>
+                                <td style="max-width: 100px;">
+                                    <div class="d-flex px-2 py-1">
+                                        <div>
+                                            <img src="../assets/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user1">
+                                        </div>
+                                        <div class="d-flex flex-column justify-content-center">
+                                            <h6 class="mb-0 text-sm text-wrap">John Michael</h6>
+                                            <p class="text-xs text-secondary mb-0">john@creative-tim.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="align-middle text-center">
+                                    <span class="text-secondary text-xs font-weight-bold">23/04/18</span>
+                                </td>
+                                <td class="align-middle text-center">
+                                    <span class="text-secondary text-xs font-weight-bold">title</span>
+                                </td>
+                                <td class="align-middle text-center text-sm">
+                                    <span class="text-secondary text-xs font-weight-bold">content</span>
+                                </td>
+                                <td class="align-middle">
+                                    <a href="javascript:;" class="text-secondary font-weight-bold text-xs" data-toggle="tooltip" data-original-title="Edit user">
+                                        <span class="badge badge-sm bg-gradient-success">Edit</span>
+                                    </a>
+                                </td>
+                            </tr> *@
+                        </tbody>
+                    </table>
+                </div>
+            </div>           
+        </div>       
+    </div>
+    <div class="col-4">
+        <div class="card mb-4">
+            <div class="card-header pb-0 d-flex justify-content-between">
+                <h6>Gửi thông báo</h6>
+            </div>
+            <div class="card-body px-0 pt-0 pb-2">
+                <div class="table-responsive" style="height: 550px">
+                    <form method="post" class="px-3">
+                        <div class="form-group">
+                            <label >Send To</label>
+                            @* <input  class="form-control" /> *@
+                            <select id="selectUser" name="selectUser" class="form-control">
+                                <option>--- Select User ---</option>
+                                @* <option value="id">Name</option> *@
+                            </select>
+                            <span class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label >Title</label>
+                            <input id="title" name="title" class="form-control" />
+                            <span class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label >Content</label>
+                            <input id="content" name="content" class="form-control" />
+                            <span class="text-danger"></span>
+                        </div>
+                        <button id="sendNoti" type="button" class="btn btn-primary">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdropp">Launch static backdrop modal</button>
+<!-- Modal View handling detail-->
+<div class="modal fade" id="staticBackdropp" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="staticBackdropLabel">Handling Bill Details</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="handling-bill-details">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Understood</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@* @section Scripts {
+    <script>
+        var urlBase = "@Url.Action("getProjects", "Admin")"
+        var urlUpdate = "@Url.Action("updateProject", "Admin")"
+    </script>
+    <script src="~/fetchdata/project-admin.js"></script>
+} *@
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<script src="~/fetchdata/notification.js"></script>

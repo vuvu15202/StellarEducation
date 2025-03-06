@@ -1,0 +1,108 @@
+﻿@*Tìm Khóa học
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    Layout = "/Views/Shared/Layouts/_AdminLayout.cshtml";
+    ViewData["Title"] = "Thể loại";
+}
+
+<div class="row">
+    <div class="col-lg-8" style="height: 650px;">
+        <div class="card h-100">
+            <div class="card-header pb-0 p-3">
+                <div class="row">
+                    <div class="col-6 d-flex align-items-center">
+                        <h6 class="mb-0">Tìm Danh Mục</h6>
+                    </div>
+                    <div class="col-6 text-end">
+                        <!-- <button class="btn btn-outline-primary btn-sm mb-0">View All</button> -->
+                        <input name="searchCate" id="searchCate" class="form-control" placeholder="category title">
+                    </div>
+                </div>
+            </div>
+            <div class="card-body p-3 pb-0" style="overflow-y: scroll; height: 30vh">
+                <table class="table table-striped align-items-center mb-0">
+                    <thead>
+                        <tr>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">CategoryId</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Image</th>
+                            <th class="text-uppercase text-secondary text-xxs font-weight-bolder opacity-7">Name</th>
+                            <th class="text-secondary opacity-7"></th>
+                        </tr>
+                    </thead>
+                    <tbody id="categoryTableBody">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-4">
+        <div class="card h-100">
+            <div class="card-header pb-0 p-3">
+                <div class="row">
+                    <div class="col-6 d-flex align-items-center">
+                        <h6 class="mb-0">Thêm Danh Mục</h6>
+                    </div>
+                    <div class="col-6 text-end">
+                        <!-- <button class="btn btn-outline-primary btn-sm mb-0">View All</button> -->
+                        @* <input name="inputSearchProject" id="inputSearchProject" class="form-control" placeholder="Project title"> *@
+                    </div>
+                </div>
+            </div>
+            <div class="card-body p-3 pb-0" style="overflow-y: scroll; height: 30vh">
+                <div>
+                    @* <div class="form-group">
+                    <label for="courseId">Course ID</label>
+                    <input type="number" class="form-control" id="courseId" placeholder="Enter Course ID">
+                    </div> *@
+                    
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter Course Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Image URL</label>
+                        <input type="file" class="form-control" id="image" >
+                        <div id="createError" style="color: red;"></div>
+                    </div>
+                    
+                    <div id="createCategory" type="button" class="btn btn-primary">Submit</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit User Modal -->
+<div class="modal fade" id="editCate" tabindex="-1" aria-labelledby="editCateModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editCateModalLabel">Edit Cate</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="editUserForm">
+                    <input type="hidden" id="editUserId">
+                    <div class="mb-3">
+                        <label for="editName" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="editName">
+                    </div>
+                    <div class="mb-3">
+                        <label for="editImage" class="form-label">Image</label>
+                        <input type="file" class="form-control" id="editImage">
+                        <div id="editError" style="color: red;"></div>
+                    </div>
+                    
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" id="saveEditCateBtn">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/fetchdata/admin-categories.js"></script>
+}

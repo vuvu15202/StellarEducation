@@ -1,0 +1,1963 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>82eb28f1-c200-4db0-b9d8-e65e113a662d</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Update="Views\Home\Index.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Home\Privacy.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Shared\Error.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Shared\Layouts\_AdminLayout.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Shared\Layouts\_StudentLayout.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Shared\Partials\AsideBar - Copy.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Shared\Partials\AsideBar.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Shared\Partials\Footer - Copy.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Shared\Partials\Footer.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Shared\Partials\Navbar - Copy.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Shared\Partials\Navbar.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Shared\Partials\SettingButton - Copy.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Shared\Partials\SettingButton.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Shared\Partials\studentnav.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Shared\_Layout.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Shared\_StudentLayout.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Shared\_ValidationScriptsPartial.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\Student\Enroll.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\_ViewImports.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="Views\_ViewStart.cshtml">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\css\site.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\css\toastr.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\favicon.ico">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\fetchdata\admin-categories.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\fetchdata\admin-courses.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\fetchdata\admin-lessons.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\fetchdata\barchart.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\fetchdata\billing.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\fetchdata\course-detail-comment.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\fetchdata\admin-dashboard.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\fetchdata\home.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\fetchdata\lesson.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\fetchdata\notification.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\fetchdata\payment.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\fetchdata\piechart.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\fetchdata\project-admin.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\fetchdata\project.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\fetchdata\projects.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\fetchdata\register.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\fetchdata\studentfee.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\fetchdata\youtube.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\about_1.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\about_2.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\about_3.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\banner_1.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\blog_1.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\blog_2.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\blog_3.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\blog_4.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\blog_5.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\blog_images_1.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\blog_images_2.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\blog_single.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\comment_1.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\comment_2.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\comment_3.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\counter_background.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\courses\01psd.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\courses\LapTrinhCSharpCoBan.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\courses\LapTrinhJavaCoBan.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\courses\LapTrinhJavaVoiSpringBoot.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\courses\LapTrinhRestfulAPIvoiAspdotnetcore.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\courses\LapTrinhWindowsFormvoidotnetcore.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\courses\LapTrinhWPFvoidotnetcore.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\courses\MySQCoBan.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\courses\MySQNangCao.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\courses\SQLServerCoBan.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\courses\Unity2DCoBan.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\courses\Unity2DNangCao.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\courses\Unity3DCoBan.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\courses\Unity3DNangCao.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\courses_background.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\course_1.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\course_2.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\course_3.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\course_4.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\course_5.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\course_6.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\course_7.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\course_8.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\course_9.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\course_image.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\down.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\ebe25da3-6d41-44f2-81e6-b8b061f0ca3a.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\event_1.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\event_2.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\event_3.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\f3d146e9-1e6d-4cc6-9938-b936fb0ec50c.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\footer_background.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\gallery_1.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\gallery_1_large.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\gallery_2.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\gallery_2_large.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\gallery_3.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\gallery_3_large.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\gallery_4.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\gallery_4_large.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\gallery_5.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\gallery_5_large.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\gallery_6.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\gallery_6_large.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\home_slider_1.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\home_slider_new_1.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\home_slider_new_2.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\icon_1.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\icon_2.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\icon_3.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\icon_4.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\latest_1.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\latest_2.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\latest_3.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\marker.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\mobile_1.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\mobile_2.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\mov_bbb.mp4">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\mov_bbb.ogg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\newsletter.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\newsletter_background.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\news_1.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\OneNote Table Of Contents.onetoc2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\partner_1.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\partner_2.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\partner_3.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\partner_4.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\partner_5.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\partner_6.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\play.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\play_big.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\teacher.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\team_1.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\team_2.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\team_3.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\team_4.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\team_background.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\video.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\images\video_play.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\js\blog.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\js\blog_single.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\js\contact.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\js\course.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\js\courses.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\js\custom.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\js\jquery-3.2.1.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\js\new.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\js\news.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\js\notification.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\js\plugins\chartjs.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\js\site.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\js\toastr.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\js\validateForm.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.min.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap.min.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.js.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.js.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\js\bootstrap.esm.min.js.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\js\bootstrap.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\js\bootstrap.js.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\dist\js\bootstrap.min.js.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\bootstrap\LICENSE">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery-validation\dist\additional-methods.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery-validation\dist\additional-methods.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery-validation\dist\jquery.validate.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery-validation\dist\jquery.validate.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery-validation\LICENSE.md">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery\dist\jquery.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery\dist\jquery.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery\dist\jquery.min.map">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\jquery\LICENSE.txt">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\signalr\jquery.signalR.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\lib\signalr\jquery.signalR.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\microsoft-signalr\signalr.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\microsoft-signalr\signalr.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\colorbox\colorbox.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\colorbox\images\border.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\colorbox\images\controls.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\colorbox\images\loading.gif">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\colorbox\images\loading_background.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\colorbox\images\OneNote Table Of Contents.onetoc2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\colorbox\images\overlay.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\colorbox\jquery.colorbox-min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\colorbox\OneNote Table Of Contents.onetoc2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\easing\easing.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\easing\OneNote Table Of Contents.onetoc2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\css\font-awesome.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\css\font-awesome.min.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\css\OneNote Table Of Contents.onetoc2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.eot">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.svg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.ttf">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.woff">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\fonts\fontawesome-webfont.woff2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\fonts\FontAwesome.otf">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\fonts\OneNote Table Of Contents.onetoc2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\HELP-US-OUT.txt">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\less\animated.less">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\less\bordered-pulled.less">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\less\core.less">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\less\fixed-width.less">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\less\font-awesome.less">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\less\icons.less">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\less\larger.less">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\less\list.less">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\less\mixins.less">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\less\OneNote Table Of Contents.onetoc2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\less\path.less">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\less\rotated-flipped.less">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\less\screen-reader.less">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\less\stacked.less">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\less\variables.less">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\OneNote Table Of Contents.onetoc2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\scss\font-awesome.scss">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\scss\OneNote Table Of Contents.onetoc2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\scss\_animated.scss">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\scss\_bordered-pulled.scss">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\scss\_core.scss">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\scss\_fixed-width.scss">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\scss\_icons.scss">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\scss\_larger.scss">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\scss\_list.scss">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\scss\_mixins.scss">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\scss\_path.scss">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\scss\_rotated-flipped.scss">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\scss\_screen-reader.scss">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\scss\_stacked.scss">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\font-awesome-4.7.0\scss\_variables.scss">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\greensock\animation.gsap.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\greensock\OneNote Table Of Contents.onetoc2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\greensock\scrolltoplugin.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\greensock\timelinemax.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\greensock\tweenmax.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\masonry\masonry.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\masonry\OneNote Table Of Contents.onetoc2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\OneNote Table Of Contents.onetoc2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\owlcarousel2-2.2.1\ajax-loader.gif">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\owlcarousel2-2.2.1\animate.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\owlcarousel2-2.2.1\OneNote Table Of Contents.onetoc2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\owlcarousel2-2.2.1\owl.carousel.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\owlcarousel2-2.2.1\owl.carousel.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\owlcarousel2-2.2.1\owl.theme.default.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\owlcarousel2-2.2.1\owl.video.play.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\parallax-js-master\OneNote Table Of Contents.onetoc2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\parallax-js-master\parallax.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\scrollmagic\OneNote Table Of Contents.onetoc2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\scrollmagic\scrollmagic.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\video-js\OneNote Table Of Contents.onetoc2">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\video-js\video-js.css">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\plugins\video-js\video.min.js">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\uploads\01psd.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\uploads\1_-GIDkyo5UjIsn4Qqp7yMTw.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\uploads\b736a6b9-4164-48d9-bd30-f7b73a0dd94d.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\uploads\BEes.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\uploads\d9a526de-1e7a-47b8-99d9-4ef8bf2cc186.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\uploads\databses.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\uploads\doi-net-ve-lap-trinh-game-unity.jpg">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\uploads\imaFEges.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\uploads\IMG_7833.HEIC">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\uploads\LapTrinhCSharpCoBan.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\uploads\LapTrinhJavaCoBan.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\uploads\LapTrinhJavaVoiSpringBoot.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\uploads\LapTrinhRestfulAPIvoiAspdotnetcore.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\uploads\LapTrinhWindowsFormvoidotnetcore.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\uploads\LapTrinhWPFvoidotnetcore.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\uploads\MySQCoBan.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\uploads\MySQNangCao.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\uploads\SQLServerCoBan.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\uploads\Unity2DCoBan.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\uploads\Unity2DNangCao.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\uploads\Unity3DCoBan.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Update="wwwroot\uploads\Unity3DNangCao.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="Views\Admin\Categories.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Admin\Courses.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Admin\Dashboard.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Admin\Lessons.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Admin\Notification.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Admin\StudentFee.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Auth\Login.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Auth\Register.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Courses\CourseDetail.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Courses\lesson.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Courses\Payment.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Error\Error401.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Error\Error404.cshtml" />
+    <_ContentIncludedByDefault Remove="Views\Home\Contact.cshtml" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\argon-dashboard.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\argon-dashboard.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\argon-dashboard.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\nucleo-icons.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\css\nucleo-svg.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\fonts\nucleo-icons.eot" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\fonts\nucleo-icons.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\fonts\nucleo-icons.ttf" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\fonts\nucleo-icons.woff" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\fonts\nucleo-icons.woff2" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\fonts\nucleo.eot" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\fonts\nucleo.ttf" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\fonts\nucleo.woff" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\fonts\nucleo.woff2" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\apple-icon.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\bg-profile.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\bg1.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\bruce-mars.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\carousel-1.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\carousel-2.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\carousel-3.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved-10.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved-11.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved-6.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved-8.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved0.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved1.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved10.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved11-small.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved11.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved12.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved13.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved14.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved19.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved2.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved21.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved3.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved4.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved5-small.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved5.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved6-small.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved6.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved7.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved8.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\curved9.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\curved-images\white-curved.jpeg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\down-arrow-dark.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\down-arrow-white.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\down-arrow.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\favicon.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\home-decor-1.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\home-decor-2.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\home-decor-3.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\icons\flags\AU.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\icons\flags\BR.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\icons\flags\DE.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\icons\flags\GB.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\icons\flags\US.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\illustrations\icon-documentation.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\illustrations\rocket-white.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\ivana-square.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\ivancik.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\kal-visuals-square.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\logo-ct-dark.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\logo-ct.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\logos\mastercard.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\logos\visa.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\marie.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\shapes\pattern-lines.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\shapes\shape-1.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\shapes\shape-2.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\shapes\shape-3.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\shapes\wave-down.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\shapes\wave-up.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\shapes\waves-gray.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\shapes\waves-white.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\small-logos\icon-sun-cloud.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\small-logos\logo-atlassian.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\small-logos\logo-invision.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\small-logos\logo-jira.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\small-logos\logo-slack.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\small-logos\logo-spotify.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\small-logos\logo-webdev.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\small-logos\logo-xd.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\team-1.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\team-2.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\team-3.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\team-4.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\theme\angular.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\theme\bootstrap.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\theme\dribbble.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\theme\dropbox.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\theme\mastercard.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\theme\paypal.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\theme\react.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\theme\sketch.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\theme\slack.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\theme\spotify.jpeg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\theme\tim.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\theme\unass.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\theme\visa.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\theme\vue.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\img\vr-bg.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\js\argon-dashboard.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\js\argon-dashboard.js.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\js\argon-dashboard.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\js\billing.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\js\core\bootstrap.bundle.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\js\core\bootstrap.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\js\core\popper.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\js\plugins\bootstrap-notify.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\js\plugins\Chart.extension.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\js\plugins\chartjs.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\js\plugins\perfect-scrollbar.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\js\plugins\smooth-scrollbar.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-grid.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-grid.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-grid.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-grid.min.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-grid.rtl.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-grid.rtl.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-grid.rtl.min.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-reboot.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-reboot.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-reboot.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-reboot.min.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-reboot.rtl.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-reboot.rtl.min.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-utilities.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-utilities.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-utilities.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-utilities.min.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-utilities.rtl.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap-utilities.rtl.min.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap.min.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap.rtl.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap.rtl.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap.rtl.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\css\bootstrap.rtl.min.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\js\bootstrap.bundle.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\js\bootstrap.bundle.js.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\js\bootstrap.bundle.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\js\bootstrap.esm.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\js\bootstrap.esm.js.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\js\bootstrap.esm.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\js\bootstrap.esm.min.js.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\js\bootstrap.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\js\bootstrap.js.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\js\bootstrap.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\dist\js\bootstrap.min.js.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\bootstrap\LICENSE" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\jquery-validation-unobtrusive\LICENSE.txt" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\jquery-validation\dist\additional-methods.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\jquery-validation\dist\additional-methods.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\jquery-validation\dist\jquery.validate.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\jquery-validation\dist\jquery.validate.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\jquery-validation\LICENSE.md" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\jquery\dist\jquery.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\jquery\dist\jquery.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\jquery\dist\jquery.min.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\lib\jquery\LICENSE.txt" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\css\argon-dashboard.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\css\argon-dashboard.css.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\css\argon-dashboard.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\css\nucleo-icons.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\css\nucleo-svg.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\fonts\nucleo-icons.eot" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\fonts\nucleo-icons.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\fonts\nucleo-icons.ttf" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\fonts\nucleo-icons.woff" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\fonts\nucleo-icons.woff2" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\fonts\nucleo.eot" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\fonts\nucleo.ttf" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\fonts\nucleo.woff" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\fonts\nucleo.woff2" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\apple-icon.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\bg-profile.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\bg1.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\bruce-mars.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\carousel-1.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\carousel-2.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\carousel-3.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved-10.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved-11.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved-6.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved-8.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved0.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved1.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved10.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved11-small.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved11.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved12.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved13.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved14.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved19.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved2.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved21.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved3.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved4.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved5-small.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved5.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved6-small.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved6.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved7.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved8.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\curved9.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\curved-images\white-curved.jpeg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\down-arrow-dark.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\down-arrow-white.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\down-arrow.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\favicon.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\home-decor-1.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\home-decor-2.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\home-decor-3.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\icons\flags\AU.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\icons\flags\BR.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\icons\flags\DE.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\icons\flags\GB.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\icons\flags\US.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\illustrations\icon-documentation.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\illustrations\rocket-white.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\ivana-square.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\ivancik.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\kal-visuals-square.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\logo-ct-dark.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\logo-ct.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\logos\mastercard.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\logos\visa.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\marie.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\shapes\pattern-lines.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\shapes\shape-1.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\shapes\shape-2.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\shapes\shape-3.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\shapes\wave-down.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\shapes\wave-up.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\shapes\waves-gray.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\shapes\waves-white.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\small-logos\icon-sun-cloud.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\small-logos\logo-atlassian.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\small-logos\logo-invision.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\small-logos\logo-jira.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\small-logos\logo-slack.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\small-logos\logo-spotify.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\small-logos\logo-webdev.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\small-logos\logo-xd.svg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\team-1.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\team-2.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\team-3.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\team-4.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\theme\angular.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\theme\bootstrap.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\theme\dribbble.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\theme\dropbox.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\theme\mastercard.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\theme\paypal.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\theme\react.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\theme\sketch.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\theme\slack.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\theme\spotify.jpeg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\theme\tim.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\theme\unass.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\theme\visa.png" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\theme\vue.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\img\vr-bg.jpg" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\js\argon-dashboard.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\js\argon-dashboard.js.map" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\js\argon-dashboard.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\js\core\bootstrap.bundle.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\js\core\bootstrap.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\js\core\popper.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\js\plugins\bootstrap-notify.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\js\plugins\Chart.extension.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\js\plugins\chartjs.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\js\plugins\perfect-scrollbar.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\js\plugins\smooth-scrollbar.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\bootstrap-grid.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\bootstrap-reboot.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\bootstrap-utilities.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\bootstrap.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\forms\_floating-labels.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\forms\_form-check.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\forms\_form-control.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\forms\_form-range.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\forms\_form-select.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\forms\_form-text.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\forms\_input-group.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\forms\_labels.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\forms\_validation.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\helpers\_clearfix.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\helpers\_color-bg.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\helpers\_colored-links.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\helpers\_position.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\helpers\_ratio.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\helpers\_stacks.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\helpers\_stretched-link.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\helpers\_text-truncation.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\helpers\_visually-hidden.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\helpers\_vr.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_alert.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_backdrop.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_border-radius.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_box-shadow.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_breakpoints.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_buttons.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_caret.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_clearfix.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_color-scheme.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_container.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_deprecate.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_forms.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_gradients.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_grid.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_image.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_list-group.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_lists.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_pagination.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_reset-text.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_resize.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_table-variants.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_text-truncate.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_transition.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_utilities.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\mixins\_visually-hidden.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\utilities\_api.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\vendor\_rfs.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_accordion.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_alert.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_badge.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_breadcrumb.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_button-group.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_buttons.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_card.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_carousel.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_close.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_containers.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_dropdown.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_forms.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_functions.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_grid.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_helpers.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_images.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_list-group.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_maps.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_mixins.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_modal.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_nav.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_navbar.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_offcanvas.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_pagination.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_placeholders.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_popover.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_progress.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_reboot.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_root.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_spinners.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_tables.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_toasts.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_tooltip.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_transitions.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_type.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_utilities.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\bootstrap\_variables.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\cards\card-background.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\cards\card-carousel.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\custom\_styles.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\custom\_variables.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\forms\_form-check.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\forms\_form-select.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\forms\_form-switch.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\forms\_forms.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\forms\_input-group.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\forms\_inputs.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\forms\_labels.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\mixins\mixins.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\mixins\_badge.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\mixins\_colored-shadows.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\mixins\_hover.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\mixins\_social-buttons.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\plugins\free\plugins.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\plugins\free\_flatpickr.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\plugins\free\_nouislider.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\plugins\free\_perfect-scrollbar.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\plugins\free\_prism.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\theme.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_animations.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_avatars.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_badge.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_breadcrumb.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_cards-extend.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_cards.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_choices.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_dark-version.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_dropdowns.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_fixed-plugin.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_form-switch.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_full-calendar.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_header.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_info-areas.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_misc-extend.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_misc.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_navbar-vertical.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_navbar.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_pagination.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_rtl.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_social-buttons.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_table.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_timeline.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_utilities-extend.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_utilities.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\variables\_virtual-reality.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_alert.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_avatars.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_badge.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_breadcrumbs.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_buttons.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_cards.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_dark-version.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_dropdown.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_dropup.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_fixed-plugin.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_footer.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_forms.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_gradients.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_header.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_info-areas.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_misc.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_nav.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_navbar-vertical.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_navbar.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_pagination.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_popovers.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_progress.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_rtl.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_social-buttons.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_tables.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_tilt.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_timeline.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_tooltips.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_typography.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_utilities-extend.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_utilities.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\New folder\scss\argon-dashboard\_variables.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\bootstrap-grid.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\bootstrap-reboot.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\bootstrap-utilities.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\bootstrap.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\forms\_floating-labels.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\forms\_form-check.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\forms\_form-control.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\forms\_form-range.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\forms\_form-select.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\forms\_form-text.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\forms\_input-group.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\forms\_labels.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\forms\_validation.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\helpers\_clearfix.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\helpers\_color-bg.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\helpers\_colored-links.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\helpers\_position.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\helpers\_ratio.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\helpers\_stacks.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\helpers\_stretched-link.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\helpers\_text-truncation.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\helpers\_visually-hidden.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\helpers\_vr.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_alert.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_backdrop.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_border-radius.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_box-shadow.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_breakpoints.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_buttons.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_caret.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_clearfix.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_color-scheme.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_container.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_deprecate.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_forms.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_gradients.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_grid.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_image.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_list-group.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_lists.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_pagination.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_reset-text.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_resize.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_table-variants.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_text-truncate.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_transition.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_utilities.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\mixins\_visually-hidden.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\utilities\_api.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\vendor\_rfs.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_accordion.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_alert.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_badge.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_breadcrumb.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_button-group.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_buttons.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_card.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_carousel.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_close.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_containers.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_dropdown.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_forms.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_functions.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_grid.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_helpers.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_images.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_list-group.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_maps.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_mixins.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_modal.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_nav.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_navbar.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_offcanvas.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_pagination.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_placeholders.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_popover.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_progress.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_reboot.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_root.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_spinners.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_tables.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_toasts.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_tooltip.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_transitions.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_type.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_utilities.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\bootstrap\_variables.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\cards\card-background.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\cards\card-carousel.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\custom\_styles.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\custom\_variables.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\forms\_form-check.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\forms\_form-select.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\forms\_form-switch.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\forms\_forms.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\forms\_input-group.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\forms\_inputs.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\forms\_labels.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\mixins\mixins.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\mixins\_badge.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\mixins\_colored-shadows.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\mixins\_hover.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\mixins\_social-buttons.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\plugins\free\plugins.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\plugins\free\_flatpickr.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\plugins\free\_nouislider.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\plugins\free\_perfect-scrollbar.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\plugins\free\_prism.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\theme.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_animations.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_avatars.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_badge.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_breadcrumb.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_cards-extend.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_cards.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_choices.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_dark-version.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_dropdowns.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_fixed-plugin.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_form-switch.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_full-calendar.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_header.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_info-areas.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_misc-extend.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_misc.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_navbar-vertical.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_navbar.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_pagination.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_rtl.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_social-buttons.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_table.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_timeline.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_utilities-extend.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_utilities.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\variables\_virtual-reality.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_alert.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_avatars.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_badge.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_breadcrumbs.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_buttons.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_cards.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_dark-version.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_dropdown.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_dropup.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_fixed-plugin.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_footer.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_forms.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_gradients.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_header.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_info-areas.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_misc.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_nav.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_navbar-vertical.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_navbar.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_pagination.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_popovers.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_progress.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_rtl.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_social-buttons.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_tables.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_tilt.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_timeline.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_tooltips.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_typography.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_utilities-extend.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_utilities.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\assets\scss\argon-dashboard\_variables.scss" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\blog.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\blog_responsive.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\blog_single.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\blog_single_responsive.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\bootstrap4\bootstrap.min.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\bootstrap4\bootstrap.min.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\bootstrap4\OneNote Table Of Contents.onetoc2" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\bootstrap4\popper.js" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\contact.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\contact_responsive.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\course.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\courses.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\courses_responsive.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\course_responsive.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\main_styles.css" />
+    <_ContentIncludedByDefault Remove="wwwroot\css\responsive.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Admin\Categories.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Admin\Courses.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Admin\Dashboard.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Admin\Lessons.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Admin\Notification.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Admin\StudentFee.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Auth\Login.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Auth\Register.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Courses\CourseDetail.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Courses\lesson.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Courses\Payment.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Error\Error401.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Error\Error404.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <UpToDateCheckInput Remove="Views\Home\Contact.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="6.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.19.6" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="6.0.18" />
+  </ItemGroup>
+
+</Project>

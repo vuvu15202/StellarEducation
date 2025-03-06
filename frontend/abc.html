@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructor Profile</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="View_Profile_Lecture.css" rel="stylesheet">
+</head>
+<style>
+    /* Header */
+.navbar {
+    background-color: #ffffff; /* Màu nền trắng */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Hiệu ứng bóng mờ */
+    position: fixed; /* Cố định vị trí */
+    top: 0; /* Đặt ở trên cùng */
+    left: 0;
+    width: 100%; /* Chiếm toàn bộ chiều rộng */
+    background-color: #333; /* Màu nền cho thanh */
+    color: white; /* Màu chữ */
+    padding: 10px; /* Khoảng cách bên trong */
+    z-index: 1000; /* Đảm bảo nó nằm trên các phần khác */
+}
+
+.navbar-brand img {
+    margin-right: 10px;
+}
+
+.nav-link {
+    color: #343a40; /* Màu chữ đen nhạt */
+}
+
+.nav-link:hover {
+    color: #007bff; /* Màu khi hover (màu xanh đậm) */
+}
+
+.navbar-toggler {
+    border-color: #007bff; /* Màu xanh khi nhấn menu */
+}
+
+.profile-header {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-bottom: 2px solid #e3e3e3;
+    text-align: center;
+}
+
+.profile-header img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+.profile-body {
+    margin-top: 30px;
+}
+
+.btn-back {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn-back:hover {
+    background-color: #0056b3;
+}
+
+.course-list .course-item {
+    padding: 15px;
+    border: 1px solid #e3e3e3;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.course-list .course-item h5 {
+    margin-bottom: 0;
+}
+
+.course-list .course-item p {
+    margin-top: 5px;
+    color: #6c757d;
+}
+/* Footer */
+footer {
+    background-color: #343a40; /* Màu nền đen nhạt */
+    color: #f8f9fa; /* Màu chữ sáng */
+    padding: 40px 0;
+}
+
+footer h5 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #f8f9fa;
+}
+
+footer p, footer a {
+    color: #d1d1d1; /* Màu chữ sáng nhạt */
+}
+
+footer a:hover {
+    color: #007bff; /* Màu xanh khi hover */
+}
+
+footer hr {
+    border-color: #4f4f4f; /* Màu đường phân cách nhạt */
+}
+/* Responsive */
+@media (max-width: 768px) {
+    footer {
+        text-align: center;
+    }
+
+    footer .col-md-4 {
+        margin-bottom: 20px;
+    }
+}
+
+</style>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="HomePage.html">
+                    <img src="~/images/logo.png" alt="Logo" width="30" height="30"
+                        class="d-inline-block align-text-top">
+                    MyWebApp
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="HomePage.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="AboutPage.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="ContactPage.html">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="LoginPage.html">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container mt-5">
+        <!-- Profile Header -->
+        <div class="profile-header">
+            <img src="https://via.placeholder.com/150" alt="Instructor Photo">
+            <h1>John Doe</h1>
+            <p>Senior Web Developer</p>
+            <p>10+ years of experience in web development, specialized in HTML, CSS, JavaScript, and more.</p>
+        </div>
+
+        <!-- Profile Body -->
+        <div class="profile-body">
+            <div class="row">
+                <div class="col-md-8">
+                    <!-- About the Instructor -->
+                    <h2>About the Instructor</h2>
+                    <p>John Doe is a passionate web developer with over a decade of experience building complex websites
+                        and web applications. He is an expert in frontend technologies like HTML, CSS, and JavaScript,
+                        as well as backend frameworks like Node.js. John has worked on numerous high-profile projects
+                        and is known for his excellent teaching style, making even the most difficult topics easy to
+                        understand.</p>
+
+                    <!-- Contact Information -->
+                    <h3>Contact Information</h3>
+                    <ul>
+                        <li>Email: john.doe@example.com</li>
+                        <li>LinkedIn: <a href="#">linkedin.com/in/johndoe</a></li>
+                        <li>Website: <a href="#">www.johndoe.dev</a></li>
+                    </ul>
+                </div>
+
+                <!-- Instructor's Courses -->
+                <div class="col-md-4">
+                    <h2>Courses by John Doe</h2>
+                    <div class="course-list">
+                        <div class="course-item">
+                            <h5>Introduction to Web Development</h5>
+                            <p>Learn the basics of web development from scratch.</p>
+                        </div>
+                        <div class="course-item">
+                            <h5>Advanced JavaScript Techniques</h5>
+                            <p>Deep dive into JavaScript concepts and frameworks.</p>
+                        </div>
+                        <div class="course-item">
+                            <h5>Responsive Web Design</h5>
+                            <p>Master the art of creating responsive and mobile-friendly websites.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back to Courses Button -->
+        <div class="text-center mt-4" style="margin-bottom: 20px;">
+            <a href="Course_Detail.html" class="btn btn-back">Back to Course Detail</a>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+<!-- Footer -->
+<footer class="bg-dark text-light py-4">
+    <div class="container">
+        <div class="row">
+            <!-- Contact Info -->
+            <div class="col-md-4">
+                <h5>Contact Us</h5>
+                <p>
+                    <i class="bi bi-geo-alt-fill"></i> 123 Street, City, Country<br />
+                    <i class="bi bi-telephone-fill"></i> +84 123 456 789<br />
+                    <i class="bi bi-envelope-fill"></i> email@example.com
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-4">
+                <h5>Quick Links</h5>
+                <ul class="list-unstyled">
+                    <li><a href="HomePage.html" class="text-light">Home</a></li>
+                    <li><a href="AboutPage.html" class="text-light">About Us</a></li>
+                    <li><a href="/services" class="text-light">Services</a></li>
+                    <li><a href="ContactPage.html" class="text-light">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Social Links -->
+            <div class="col-md-4">
+                <h5>Follow Us</h5>
+                <a href="https://facebook.com" class="text-light me-3"><i class="bi bi-facebook"></i></a>
+                <a href="https://twitter.com" class="text-light me-3"><i class="bi bi-twitter"></i></a>
+                <a href="https://instagram.com" class="text-light me-3"><i class="bi bi-instagram"></i></a>
+                <a href="https://linkedin.com" class="text-light"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+
+        <hr class="my-4" />
+
+        <!-- Copyright -->
+        <div class="text-center">
+            <p class="mb-0">&copy; 2024 MyWebApp. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+</html>
+

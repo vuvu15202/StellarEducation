@@ -1,0 +1,6 @@
+C:\Users\Admin\Desktop\dotnet\CICD_Stellar_Education\ASPNET_API.Application\obj\Debug\net6.0\ASPNET_API.Application.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\dotnet\CICD_Stellar_Education\ASPNET_API.Application\obj\Debug\net6.0\ASPNET_API.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\Desktop\dotnet\CICD_Stellar_Education\ASPNET_API.Application\obj\Debug\net6.0\ASPNET_API.Application.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\dotnet\CICD_Stellar_Education\ASPNET_API.Application\obj\Debug\net6.0\ASPNET_API.Application.AssemblyInfo.cs
+C:\Users\Admin\Desktop\dotnet\CICD_Stellar_Education\ASPNET_API.Application\obj\Debug\net6.0\ASPNET_API.Application.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\dotnet\CICD_Stellar_Education\ASPNET_API.Application\obj\Debug\net6.0\ASPNET_API.Application.sourcelink.json

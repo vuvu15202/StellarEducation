@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  webapi:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:5000
+    networks:
+      - mynetwork
+    volumes:
+      - data-protection:/root/.aspnet/DataProtection-Keys
+
+  webmvc:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports:
+      - "5001:5001"
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      ASPNETCORE_URLS: http://+:5001
+    networks:
+      - mynetwork
+    volumes:
+      - data-protection:/root/.aspnet/DataProtection-Keys
+
+networks:
+  mynetwork:
+    driver: bridge
+volumes:
+  data-protection:
